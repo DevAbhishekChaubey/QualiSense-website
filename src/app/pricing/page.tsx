@@ -6,8 +6,10 @@ import TiltCard from '@/components/TiltCard';
 import ShimmerButton from '@/components/ShimmerButton';
 import Reveal from '@/components/Reveal';
 import { motion } from 'framer-motion';
+import { useRefresh } from '@/contexts/RefreshContext';
 
 export default function Pricing() {
+  const { refresh } = useRefresh();
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
@@ -19,7 +21,7 @@ export default function Pricing() {
   };
 
   return (
-    <PageTransition>
+    <PageTransition refresh={refresh}>
       <header className="page-hero">
         <div className="container">
           <div className="eyebrow">Pricing</div>

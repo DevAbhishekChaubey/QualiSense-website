@@ -2,10 +2,21 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
-export default function PageTransition({ children }: { children: React.ReactNode }) {
+export default function PageTransition({ 
+  children, 
+  refresh = 0 
+}: { 
+  children: React.ReactNode;
+  refresh?: number;
+}) {
   const pathname = usePathname();
+  const [key, setKey] = useState(`${pathname}-${refresh}`);
+  
+  useEffect(() => {
+    setKey(`${pathname}-${refresh}`);
+  }, [pathname, refresh]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,7 +44,7 @@ export default function PageTransition({ children }: { children: React.ReactNode
       clearTimeout(timeout);
       clearTimeout(timeout2);
     };
-  }, [pathname]);
+  }, [pathname, refresh]);
 
   // Also scroll to top or hash on initial mount
   useEffect(() => {
@@ -58,7 +69,7 @@ export default function PageTransition({ children }: { children: React.ReactNode
   return (
     <AnimatePresence mode="wait">
       <motion.div
-        key={pathname}
+        key={key}
         initial={{ opacity: 0, y: 20, scale: 0.98, filter: 'blur(6px)' }}
         animate={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
         exit={{ opacity: 0, y: -20, scale: 0.98, filter: 'blur(6px)' }}

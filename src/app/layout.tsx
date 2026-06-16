@@ -7,6 +7,7 @@ import Spotlight from "@/components/Spotlight";
 import CursorFollower from "@/components/CursorFollower";
 import GrainBackground from "@/components/GrainBackground";
 import { FooterFull } from "@/components/Footer";
+import { RefreshProvider } from "@/contexts/RefreshContext";
 
 export const metadata: Metadata = {
   title: "Qualisense — A Force Multiplier for Researchers",
@@ -22,14 +23,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Icons />
-        <GrainBackground />
-        <GridBackground />
-        <Spotlight />
-        <CursorFollower />
-        <Nav />
-        {children}
-        <FooterFull />
+        <RefreshProvider>
+          <Icons />
+          <GrainBackground />
+          <GridBackground />
+          <Spotlight />
+          <CursorFollower />
+          <Nav />
+          {children}
+          <FooterFull />
+        </RefreshProvider>
       </body>
     </html>
   );

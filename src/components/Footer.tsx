@@ -1,19 +1,23 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
+import { useRefresh } from '@/contexts/RefreshContext';
 
 export function FooterFull() {
   const pathname = usePathname();
-  const router = useRouter();
+  const { triggerRefresh } = useRefresh();
 
   const handleLogoClick = (e: React.MouseEvent) => {
     if (pathname === '/') {
       e.preventDefault();
-      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-      if (window.location.hash) {
-        window.history.pushState(null, '', pathname);
-      }
+      triggerRefresh();
+      setTimeout(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+        if (window.location.hash) {
+          window.history.pushState(null, '', pathname);
+        }
+      }, 50);
     }
     // On other pages, let Next.js handle it normally
   };

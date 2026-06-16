@@ -8,6 +8,7 @@ import AnimatedTabs from '@/components/AnimatedTabs';
 import TiltCard from '@/components/TiltCard';
 import ShimmerButton from '@/components/ShimmerButton';
 import Reveal from '@/components/Reveal';
+import { useRefresh } from '@/contexts/RefreshContext';
 
 const tabs = [
   { id: 'tab1', label: 'Live interviewing' },
@@ -18,6 +19,7 @@ const tabs = [
 ];
 
 export default function Product() {
+  const { refresh } = useRefresh();
   const [activeTab, setActiveTab] = useState('tab1');
   const [prevTab, setPrevTab] = useState('tab1');
 
@@ -25,7 +27,7 @@ export default function Product() {
   const direction = getTabIndex(activeTab) >= getTabIndex(prevTab) ? 1 : -1;
 
   return (
-    <PageTransition>
+    <PageTransition refresh={refresh}>
       <header className="page-hero">
         <div className="container">
           <div className="eyebrow">The Qualisense platform</div>

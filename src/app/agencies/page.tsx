@@ -6,10 +6,12 @@ import TiltCard from '@/components/TiltCard';
 import ShimmerButton from '@/components/ShimmerButton';
 import Reveal from '@/components/Reveal';
 import { motion } from 'framer-motion';
+import { useRefresh } from '@/contexts/RefreshContext';
 
 export default function Agencies() {
+  const { refresh } = useRefresh();
   return (
-    <PageTransition>
+    <PageTransition refresh={refresh}>
       <header className="page-hero">
         <div className="container">
           <div className="breadcrumbs">

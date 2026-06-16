@@ -8,6 +8,7 @@ import TiltCard from '@/components/TiltCard';
 import ShimmerButton from '@/components/ShimmerButton';
 import { useCountUp } from '@/hooks/useCountUp';
 import { motion } from 'framer-motion';
+import { useRefresh } from '@/contexts/RefreshContext';
 
 const stagger = {
   hidden: { opacity: 0 },
@@ -40,8 +41,9 @@ function StatCard({ value, label, desc, delay = 0, prefix = '', suffix = '' }: {
 }
 
 export default function Home() {
+  const { refresh } = useRefresh();
   return (
-    <PageTransition>
+    <PageTransition refresh={refresh}>
       <header className="hero">
         <div className="container hero-grid">
           <motion.div variants={stagger} initial="hidden" animate="show">

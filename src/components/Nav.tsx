@@ -1,9 +1,10 @@
 'use client';
 
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { useRefresh } from '@/contexts/RefreshContext';
 
 const links = [
   { href: '/product', label: 'Product' },
@@ -15,7 +16,7 @@ const links = [
 
 export default function Nav() {
   const pathname = usePathname();
-  const router = useRouter();
+  const { triggerRefresh } = useRefresh();
   const [activeHref, setActiveHref] = useState('');
 
   // Helper function to calculate active link based on pathname and hash
@@ -121,10 +122,15 @@ export default function Nav() {
     if (pathname === '/') {
       e.preventDefault();
       handleClearActive();
-      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-      if (window.location.hash) {
-        window.history.pushState(null, '', pathname);
-      }
+      // Trigger refresh animation!
+      triggerRefresh();
+      // Wait a tiny bit for animation to start, then scroll to top
+      setTimeout(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+        if (window.location.hash) {
+          window.history.pushState(null, '', pathname);
+        }
+      }, 50);
     } else {
       // On other pages, let Next.js handle navigation normally
       // Just clear active state and let it go
