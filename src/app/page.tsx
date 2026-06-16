@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import { FooterFull } from '@/components/Footer';
 import PageTransition from '@/components/PageTransition';
 import Reveal from '@/components/Reveal';
 import TextGenerate from '@/components/TextGenerate';
@@ -352,7 +351,6 @@ export default function Home() {
       </section>
 
       </Reveal>
-      <FooterFull />
     </PageTransition>
   );
 }

@@ -1,12 +1,29 @@
+'use client';
+
 import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 
 export function FooterFull() {
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    if (pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      if (window.location.hash) {
+        window.history.pushState(null, '', pathname);
+      }
+    }
+    // On other pages, let Next.js handle it normally
+  };
+
   return (
     <footer className="footer">
       <div className="container">
         <div className="footer-grid">
           <div>
-            <Link className="brand" href="/">
+            <Link className="brand" href="/" onClick={(e) => handleLogoClick(e)}>
               <span className="logo-mark">
                 <img src="/logo-removebg-preview.png" alt="Qualisense" />
               </span>

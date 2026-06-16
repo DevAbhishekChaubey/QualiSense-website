@@ -6,7 +6,7 @@ import GridBackground from "@/components/GridBackground";
 import Spotlight from "@/components/Spotlight";
 import CursorFollower from "@/components/CursorFollower";
 import GrainBackground from "@/components/GrainBackground";
-import ThemeInit from "@/components/ThemeInit";
+import { FooterFull } from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Qualisense — A Force Multiplier for Researchers",
@@ -27,9 +27,9 @@ export default function RootLayout({
         <GridBackground />
         <Spotlight />
         <CursorFollower />
-        <ThemeInit />
         <Nav />
         {children}
+        <FooterFull />
       </body>
     </html>
   );

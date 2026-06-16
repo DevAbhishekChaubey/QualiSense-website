@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import { FooterSimple } from '@/components/Footer';
 import PageTransition from '@/components/PageTransition';
 import TiltCard from '@/components/TiltCard';
 import ShimmerButton from '@/components/ShimmerButton';
@@ -199,8 +198,6 @@ export default function Agencies() {
         </div>
       </section>
       </Reveal>
-
-      <FooterSimple />
     </PageTransition>
   );
 }

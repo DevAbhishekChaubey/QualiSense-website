@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FooterSimple } from '@/components/Footer';
 import PageTransition from '@/components/PageTransition';
 import AnimatedTabs from '@/components/AnimatedTabs';
 import TiltCard from '@/components/TiltCard';
@@ -194,8 +193,6 @@ export default function Product() {
         </div>
       </section>
       </Reveal>
-
-      <FooterSimple />
     </PageTransition>
   );
 }
