@@ -86,6 +86,7 @@ export default function Nav() {
   }, [pathname]);
 
   const handleLinkClick = (href: string, e: React.MouseEvent) => {
+    document.querySelector('.nav')?.classList.remove('open');
     if (href.includes('#')) {
       const [linkPath, linkHash] = href.split('#');
       if (linkPath === pathname) {
