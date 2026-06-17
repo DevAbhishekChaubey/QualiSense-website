@@ -2,6 +2,10 @@
 
 import { useEffect, useRef } from 'react';
 
+const SETTLE_THRESHOLD = 0.5;
+const LERP = 0.08;
+const HALO_OFFSET = 75;
+
 export default function CursorFollower() {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -9,37 +13,58 @@ export default function CursorFollower() {
     const media = window.matchMedia('(hover: hover) and (pointer: fine)');
     if (!media.matches) return;
 
-    let raf: number;
+    let raf = 0;
+    let animating = false;
     let x = 0;
     let y = 0;
-    let active = !document.hidden;
     const target = { x: 0, y: 0 };
 
-    const onMove = (e: MouseEvent) => {
-      target.x = e.clientX;
-      target.y = e.clientY;
-    };
-
-    const onVisibility = () => {
-      active = !document.hidden;
-      if (active) {
-        raf = requestAnimationFrame(animate);
+    const applyTransform = () => {
+      if (ref.current) {
+        ref.current.style.transform = `translate(${x - HALO_OFFSET}px, ${y - HALO_OFFSET}px)`;
       }
     };
 
     const animate = () => {
-      if (!active) return;
-      x += (target.x - x) * 0.08;
-      y += (target.y - y) * 0.08;
-      if (ref.current) {
-        ref.current.style.transform = `translate(${x - 75}px, ${y - 75}px)`;
+      x += (target.x - x) * LERP;
+      y += (target.y - y) * LERP;
+      applyTransform();
+
+      if (
+        Math.abs(target.x - x) > SETTLE_THRESHOLD ||
+        Math.abs(target.y - y) > SETTLE_THRESHOLD
+      ) {
+        raf = requestAnimationFrame(animate);
+        return;
       }
+
+      x = target.x;
+      y = target.y;
+      applyTransform();
+      animating = false;
+    };
+
+    const startAnimation = () => {
+      if (animating) return;
+      animating = true;
       raf = requestAnimationFrame(animate);
+    };
+
+    const onMove = (e: MouseEvent) => {
+      target.x = e.clientX;
+      target.y = e.clientY;
+      startAnimation();
+    };
+
+    const onVisibility = () => {
+      if (document.hidden) {
+        cancelAnimationFrame(raf);
+        animating = false;
+      }
     };
 
     window.addEventListener('mousemove', onMove, { passive: true });
     document.addEventListener('visibilitychange', onVisibility);
-    raf = requestAnimationFrame(animate);
 
     return () => {
       window.removeEventListener('mousemove', onMove);
@@ -62,7 +87,7 @@ export default function CursorFollower() {
           'radial-gradient(circle, rgba(118,228,212,0.08), transparent 70%)',
         pointerEvents: 'none',
         zIndex: 9999,
-        transform: 'translate(-75px, -75px)',
+        transform: `translate(-${HALO_OFFSET}px, -${HALO_OFFSET}px)`,
       }}
     />
   );

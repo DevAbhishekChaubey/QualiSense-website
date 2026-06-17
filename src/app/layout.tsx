@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="light" style={{ colorScheme: 'light' }} suppressHydrationWarning>
+    <html lang="en" data-theme="light" data-scroll-behavior="smooth" style={{ colorScheme: 'light' }} suppressHydrationWarning>
       <head>
         <meta name="color-scheme" content="light" />
         <meta name="theme-color" content="#f8fbfc" />

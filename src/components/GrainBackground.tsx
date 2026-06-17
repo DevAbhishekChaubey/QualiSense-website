@@ -1,53 +1,17 @@
-'use client';
-
-import { useEffect, useRef } from 'react';
+const GRAIN_SVG = `data:image/svg+xml,${encodeURIComponent(
+  `<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256">
+    <filter id="n">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.35 0"/>
+    </filter>
+    <rect width="100%" height="100%" filter="url(#n)"/>
+  </svg>`
+)}`;
 
 export default function GrainBackground() {
-  const ref = useRef<HTMLCanvasElement>(null);
-
-  useEffect(() => {
-    const canvas = ref.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    const resize = () => {
-      canvas.width = window.innerWidth * 0.5;
-      canvas.height = window.innerHeight * 0.5;
-      draw();
-    };
-
-    const draw = () => {
-      if (!ctx || !canvas) return;
-      const w = canvas.width;
-      const h = canvas.height;
-      const image = ctx.createImageData(w, h);
-      for (let i = 0; i < image.data.length; i += 4) {
-        const v = (Math.random() * 255) | 0;
-        image.data[i] = v;
-        image.data[i + 1] = v;
-        image.data[i + 2] = v;
-        image.data[i + 3] = 6;
-      }
-      ctx.putImageData(image, 0, 0);
-    };
-
-    const scheduleResize = () => {
-      if ('requestIdleCallback' in window) {
-        window.requestIdleCallback(() => resize(), { timeout: 500 });
-      } else {
-        resize();
-      }
-    };
-
-    scheduleResize();
-    window.addEventListener('resize', scheduleResize, { passive: true });
-    return () => window.removeEventListener('resize', scheduleResize);
-  }, []);
-
   return (
-    <canvas
-      ref={ref}
+    <div
+      aria-hidden
       style={{
         position: 'fixed',
         inset: 0,
@@ -56,6 +20,9 @@ export default function GrainBackground() {
         zIndex: 9998,
         pointerEvents: 'none',
         opacity: 0.5,
+        backgroundImage: `url("${GRAIN_SVG}")`,
+        backgroundRepeat: 'repeat',
+        backgroundSize: '50% 50%',
         imageRendering: 'pixelated',
       }}
     />
