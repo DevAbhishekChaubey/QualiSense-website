@@ -177,6 +177,22 @@ export default function Nav() {
               </Link>
             );
           })}
+          <div className="nav-mobile-actions">
+            <Link
+              className="nav-mobile-action"
+              href="/pricing"
+              onClick={(e) => { handleClearActive(); handleLinkClick('/pricing', e); }}
+            >
+              Pricing
+            </Link>
+            <Link
+              className="btn btn-primary nav-mobile-action"
+              href="/pricing#demo"
+              onClick={(e) => { handleClearActive(); handleLinkClick('/pricing#demo', e); }}
+            >
+              {pathname === '/security' ? 'Discuss requirements' : 'Book a demo'}
+            </Link>
+          </div>
         </div>
         <div className="nav-actions">
           <Link className="btn btn-ghost nav-pricing" href="/pricing" onClick={(e) => { handleClearActive(); handleLinkClick('/pricing', e); }}>Pricing</Link>

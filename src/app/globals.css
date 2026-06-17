@@ -251,6 +251,10 @@ body {
   align-items: center;
 }
 
+.nav-mobile-actions {
+  display: none;
+}
+
 .mobile-toggle {
   display: none;
   background: #fff;
@@ -1107,6 +1111,18 @@ h3 {
     border: 1px solid var(--line);
     border-radius: 18px;
     box-shadow: var(--shadow);
+  }
+  .nav.open .nav-mobile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 8px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+  }
+  .nav-mobile-action {
+    text-align: center;
+    width: 100%;
   }
   .hero-grid, .content-grid {
     grid-template-columns: 1fr;
