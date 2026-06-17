@@ -23,8 +23,6 @@ export function LightModeForcer() {
     // Remove any dark mode classes
     document.body.classList.remove('dark', 'dark-mode', 'theme-dark');
     document.documentElement.classList.remove('dark', 'dark-mode', 'theme-dark');
-    
-    console.log('Light mode forced');
   }, []);
   
   return null;

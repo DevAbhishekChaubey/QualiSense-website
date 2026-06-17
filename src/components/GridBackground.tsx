@@ -17,6 +17,14 @@ export default function GridBackground() {
       draw();
     };
 
+    const scheduleResize = () => {
+      if ('requestIdleCallback' in window) {
+        window.requestIdleCallback(() => resize(), { timeout: 500 });
+      } else {
+        resize();
+      }
+    };
+
     const draw = () => {
       if (!ctx || !canvas) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -37,14 +45,14 @@ export default function GridBackground() {
       }
     };
 
-    resize();
-    window.addEventListener('resize', resize);
+    scheduleResize();
+    window.addEventListener('resize', scheduleResize, { passive: true });
 
     const observer = new MutationObserver(draw);
     observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 
     return () => {
-      window.removeEventListener('resize', resize);
+      window.removeEventListener('resize', scheduleResize);
       observer.disconnect();
     };
   }, []);

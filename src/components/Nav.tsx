@@ -2,6 +2,7 @@
 
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import Logo from '@/components/Logo';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { useRefresh } from '@/contexts/RefreshContext';
@@ -145,7 +146,7 @@ export default function Nav() {
       <div className="container nav-inner">
         <Link className="brand" href="/" onClick={(e) => handleLogoClick(e)}>
           <span className="logo-mark">
-            <img src="/logo-removebg-preview.png" alt="Qualisense" />
+            <Logo priority />
           </span>
         </Link>
         <div className="nav-links">

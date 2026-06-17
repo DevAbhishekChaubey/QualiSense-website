@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Logo from '@/components/Logo';
 import { usePathname } from 'next/navigation';
 import { useRefresh } from '@/contexts/RefreshContext';
 
@@ -29,7 +30,7 @@ export function FooterFull() {
           <div>
             <Link className="brand" href="/" onClick={(e) => handleLogoClick(e)}>
               <span className="logo-mark">
-                <img src="/logo-removebg-preview.png" alt="Qualisense" />
+                <Logo />
               </span>
             </Link>
             <p style={{ color: '#8fa0b1', maxWidth: 360 }}>

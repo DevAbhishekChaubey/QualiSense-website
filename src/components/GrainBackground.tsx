@@ -32,9 +32,17 @@ export default function GrainBackground() {
       ctx.putImageData(image, 0, 0);
     };
 
-    resize();
-    window.addEventListener('resize', resize);
-    return () => window.removeEventListener('resize', resize);
+    const scheduleResize = () => {
+      if ('requestIdleCallback' in window) {
+        window.requestIdleCallback(() => resize(), { timeout: 500 });
+      } else {
+        resize();
+      }
+    };
+
+    scheduleResize();
+    window.addEventListener('resize', scheduleResize, { passive: true });
+    return () => window.removeEventListener('resize', scheduleResize);
   }, []);
 
   return (
