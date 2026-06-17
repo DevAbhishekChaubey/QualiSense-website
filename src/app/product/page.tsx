@@ -9,6 +9,7 @@ import TiltCard from '@/components/TiltCard';
 import ShimmerButton from '@/components/ShimmerButton';
 import Reveal from '@/components/Reveal';
 import { useRefresh } from '@/contexts/RefreshContext';
+import { ctaInView, tabPanel } from '@/lib/motion';
 
 const tabs = [
   { id: 'tab1', label: 'Live interviewing' },
@@ -51,10 +52,10 @@ export default function Product() {
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeTab}
-                initial={{ opacity: 0, x: direction * 80, filter: 'blur(4px)' }}
-                animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
-                exit={{ opacity: 0, x: -direction * 80, filter: 'blur(4px)' }}
-                transition={{ duration: 0.35, ease: 'easeOut' }}
+                initial={tabPanel.initial(direction)}
+                animate={tabPanel.animate}
+                exit={tabPanel.exit(direction)}
+                transition={tabPanel.transition}
                 className="content-grid"
               >
                 {activeTab === 'tab1' && (
@@ -181,10 +182,10 @@ export default function Product() {
         <div className="container">
           <motion.div
             className="cta-box"
-            initial={{ opacity: 0, y: 30, filter: 'blur(4px)' }}
-            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            initial={ctaInView.initial}
+            whileInView={ctaInView.whileInView}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={ctaInView.transition}
           >
             <div>
               <h2>See the platform on your own research material.</h2>

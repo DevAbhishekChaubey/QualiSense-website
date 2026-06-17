@@ -9,30 +9,18 @@ import ShimmerButton from '@/components/ShimmerButton';
 import { useCountUp } from '@/hooks/useCountUp';
 import { motion } from 'framer-motion';
 import { useRefresh } from '@/contexts/RefreshContext';
-
-const stagger = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { staggerChildren: 0.12, delayChildren: 0.2 },
-  },
-};
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 24, filter: 'blur(4px)' },
-  show: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as const } },
-};
+import { stagger, fadeUp, ctaInView, quoteInView, DURATION, BLUR, EASE } from '@/lib/motion';
 
 function StatCard({ value, label, desc, delay = 0, prefix = '', suffix = '' }: { value: number; label: string; desc: string; delay?: number; prefix?: string; suffix?: string }) {
-  const { count, ref } = useCountUp(value, 1200);
+  const { count, ref } = useCountUp(value, 800);
   return (
     <motion.div
       ref={ref}
       className="stat"
-      initial={{ opacity: 0, y: 20, filter: 'blur(3px)' }}
-      whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+      initial={{ opacity: 0, y: 12, filter: BLUR.subtle }}
+      whileInView={{ opacity: 1, y: 0, filter: BLUR.out }}
       viewport={{ once: true }}
-      transition={{ duration: 0.4, delay }}
+      transition={{ duration: DURATION.item, delay }}
     >
       <strong>{prefix}{count}{suffix}</strong>
       <span>{desc}</span>
@@ -67,9 +55,9 @@ export default function Home() {
           </motion.div>
           <motion.div
             className="hero-visual"
-            initial={{ opacity: 0, x: 40, filter: 'blur(6px)' }}
-            animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
-            transition={{ duration: 0.7, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+            initial={{ opacity: 0, x: 24, filter: BLUR.emphasis }}
+            animate={{ opacity: 1, x: 0, filter: BLUR.out }}
+            transition={{ duration: DURATION.hero, delay: 0.15, ease: EASE }}
           >
             <div className="dashboard">
               <div className="window-bar">
@@ -130,9 +118,9 @@ export default function Home() {
       <section>
         <div className="container stat-row">
           <StatCard value={100} suffix="%" label="Natural depth" desc="adaptive probing that follows the respondent" delay={0} />
-          <StatCard value={1} prefix="" label="1 → many" desc="query one project or multiple studies" delay={0.08} />
-          <StatCard value={4} label=" " suffix="" desc="modular ways to use the platform" delay={0.16} />
-          <StatCard value={100} suffix="%" label="Always on" desc="research intelligence beyond the final report" delay={0.24} />
+          <StatCard value={1} prefix="" label="1 → many" desc="query one project or multiple studies" delay={0.05} />
+          <StatCard value={4} label=" " suffix="" desc="modular ways to use the platform" delay={0.1} />
+          <StatCard value={100} suffix="%" label="Always on" desc="research intelligence beyond the final report" delay={0.15} />
         </div>
       </section>
 
@@ -314,10 +302,10 @@ export default function Home() {
       <section className="section alt">
         <div className="container">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, filter: 'blur(6px)' }}
-            whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+            initial={quoteInView.initial}
+            whileInView={quoteInView.whileInView}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={quoteInView.transition}
           >
             <div className="quote">
               <p>&ldquo;A force multiplier for researchers. A living consumer intelligence layer for marketers.&rdquo;</p>
@@ -332,10 +320,10 @@ export default function Home() {
         <div className="container">
           <motion.div
             className="cta-box"
-            initial={{ opacity: 0, y: 30, filter: 'blur(4px)' }}
-            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            initial={ctaInView.initial}
+            whileInView={ctaInView.whileInView}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={ctaInView.transition}
           >
             <div>
               <div className="eyebrow">Start with one project</div>

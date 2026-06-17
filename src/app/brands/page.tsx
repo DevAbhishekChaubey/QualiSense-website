@@ -7,6 +7,7 @@ import ShimmerButton from '@/components/ShimmerButton';
 import Reveal from '@/components/Reveal';
 import { motion } from 'framer-motion';
 import { useRefresh } from '@/contexts/RefreshContext';
+import { ctaInView, quoteInView } from '@/lib/motion';
 
 export default function Brands() {
   const { refresh } = useRefresh();
@@ -166,10 +167,10 @@ export default function Brands() {
       <section className="section">
         <div className="container">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, filter: 'blur(6px)' }}
-            whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+            initial={quoteInView.initial}
+            whileInView={quoteInView.whileInView}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={quoteInView.transition}
           >
             <div className="quote">
               <p>The research does not stop answering when the final presentation ends. Qualisense keeps the evidence accessible to every marketer who needs it.</p>
@@ -184,10 +185,10 @@ export default function Brands() {
         <div className="container">
           <motion.div
             className="cta-box"
-            initial={{ opacity: 0, y: 30, filter: 'blur(4px)' }}
-            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            initial={ctaInView.initial}
+            whileInView={ctaInView.whileInView}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={ctaInView.transition}
           >
             <div>
               <div className="eyebrow">Recommended first pilot</div>

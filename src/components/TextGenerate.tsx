@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { textWord } from '@/lib/motion';
 
 export default function TextGenerate({
   text,
@@ -18,10 +19,10 @@ export default function TextGenerate({
       {words.map((word, i) => (
         <motion.span
           key={i}
-          initial={{ opacity: 0, y: 20, filter: 'blur(2px)' }}
-          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          initial={textWord.initial}
+          whileInView={textWord.whileInView}
           viewport={{ once }}
-          transition={{ duration: 0.4, delay: i * 0.05, ease: 'easeOut' }}
+          transition={{ ...textWord.transition, delay: i * textWord.wordDelay }}
           style={{ display: 'inline-block', marginRight: '0.25em' }}
         >
           {word}

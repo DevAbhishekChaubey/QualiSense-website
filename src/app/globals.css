@@ -414,7 +414,7 @@ h3 {
   inset: -35px;
   background: radial-gradient(circle, rgba(80, 185, 166, .18), transparent 66%);
   z-index: -1;
-  filter: blur(4px);
+  filter: blur(2px);
 }
 
 .dashboard {

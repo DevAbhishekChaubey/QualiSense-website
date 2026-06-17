@@ -7,6 +7,7 @@ import ShimmerButton from '@/components/ShimmerButton';
 import Reveal from '@/components/Reveal';
 import { motion } from 'framer-motion';
 import { useRefresh } from '@/contexts/RefreshContext';
+import { slideInView } from '@/lib/motion';
 
 export default function Pricing() {
   const { refresh } = useRefresh();
@@ -82,10 +83,10 @@ export default function Pricing() {
             className="form-card"
             data-demo
             onSubmit={handleSubmit}
-            initial={{ opacity: 0, x: 30, filter: 'blur(4px)' }}
-            whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+            initial={slideInView.initial}
+            whileInView={slideInView.whileInView}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={slideInView.transition}
           >
             <div className="form-grid">
               <div className="field">
