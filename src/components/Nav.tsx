@@ -179,12 +179,12 @@ export default function Nav() {
           })}
         </div>
         <div className="nav-actions">
-          <Link className="btn btn-ghost nav-pricing" href="/pricing" onClick={handleClearActive}>Pricing</Link>
+          <Link className="btn btn-ghost nav-pricing" href="/pricing" onClick={(e) => { handleClearActive(); handleLinkClick('/pricing', e); }}>Pricing</Link>
           <a className="btn btn-ghost" href="https://lab.quali-sense.ai/" target="_blank" rel="noopener noreferrer">Sign in</a>
           {pathname === '/security' ? (
-            <Link className="btn btn-primary" href="/pricing#demo" onClick={handleClearActive}>Discuss requirements</Link>
+            <Link className="btn btn-primary" href="/pricing#demo" onClick={(e) => { handleClearActive(); handleLinkClick('/pricing#demo', e); }}>Discuss requirements</Link>
           ) : (
-            <Link className="btn btn-primary" href="/pricing#demo" onClick={handleClearActive}>Book a demo</Link>
+            <Link className="btn btn-primary" href="/pricing#demo" onClick={(e) => { handleClearActive(); handleLinkClick('/pricing#demo', e); }}>Book a demo</Link>
           )}
           <button className="mobile-toggle" aria-label="Open menu" onClick={handleToggle}>
             ☰
