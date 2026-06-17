@@ -13,6 +13,7 @@ export default function Logo({ priority = false }: LogoProps) {
       height={104}
       sizes="(max-width: 680px) 70px, 96px"
       priority={priority}
+      loading={priority ? 'eager' : 'lazy'}
     />
   );
 }
