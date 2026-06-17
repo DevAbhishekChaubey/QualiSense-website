@@ -3,64 +3,29 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { useRefresh } from '@/contexts/RefreshContext';
 import { pageTransition } from '@/lib/motion';
+import { scrollToHashOrTop } from '@/lib/scroll';
 
-export default function PageTransition({ 
-  children, 
-  refresh = 0 
-}: { 
-  children: React.ReactNode;
-  refresh?: number;
-}) {
+export default function PageTransition({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+  const { refresh } = useRefresh();
   const [key, setKey] = useState(`${pathname}-${refresh}`);
-  
+
   useEffect(() => {
     setKey(`${pathname}-${refresh}`);
   }, [pathname, refresh]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const hash = window.location.hash;
-      
-      if (hash) {
-        const element = document.querySelector(hash);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      } else {
-        window.scrollTo(0, 0);
-      }
-    };
+    scrollToHashOrTop();
+    const timeout = setTimeout(scrollToHashOrTop, 120);
+    const timeout2 = setTimeout(scrollToHashOrTop, 280);
 
-    handleScroll();
-    const timeout = setTimeout(handleScroll, 120);
-    const timeout2 = setTimeout(handleScroll, 280);
-    
     return () => {
       clearTimeout(timeout);
       clearTimeout(timeout2);
     };
   }, [pathname, refresh]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const hash = window.location.hash;
-      
-      if (hash) {
-        const element = document.querySelector(hash);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      } else {
-        window.scrollTo(0, 0);
-      }
-    };
-    
-    handleScroll();
-    const timeout = setTimeout(handleScroll, 60);
-    return () => clearTimeout(timeout);
-  }, []);
 
   return (
     <AnimatePresence mode="wait">

@@ -1,18 +1,12 @@
-'use client';
-
-import Link from 'next/link';
 import PageTransition from '@/components/PageTransition';
 import TiltCard from '@/components/TiltCard';
 import ShimmerButton from '@/components/ShimmerButton';
 import Reveal from '@/components/Reveal';
-import { motion } from 'framer-motion';
-import { useRefresh } from '@/contexts/RefreshContext';
-import { ctaInView } from '@/lib/motion';
+import CtaSection from '@/components/CtaSection';
 
 export default function Security() {
-  const { refresh } = useRefresh();
   return (
-    <PageTransition refresh={refresh}>
+    <PageTransition>
       <header className="page-hero">
         <div className="container">
           <div className="eyebrow">Security and confidentiality</div>
@@ -70,23 +64,11 @@ export default function Security() {
       </Reveal>
 
       <Reveal delay={0.1}>
-      <section className="cta">
-        <div className="container">
-          <motion.div
-            className="cta-box"
-            initial={ctaInView.initial}
-            whileInView={ctaInView.whileInView}
-            viewport={{ once: true }}
-            transition={ctaInView.transition}
-          >
-            <div>
-              <h2>Have enterprise security requirements?</h2>
-              <p>Use the demo form to share your procurement, data residency or confidentiality needs.</p>
-            </div>
-            <ShimmerButton className="btn btn-primary" href="/pricing#demo">Discuss security</ShimmerButton>
-          </motion.div>
-        </div>
-      </section>
+        <CtaSection
+          title="Have enterprise security requirements?"
+          description="Use the demo form to share your procurement, data residency or confidentiality needs."
+          actions={<ShimmerButton className="btn btn-primary" href="/pricing#demo">Discuss security</ShimmerButton>}
+        />
       </Reveal>
     </PageTransition>
   );

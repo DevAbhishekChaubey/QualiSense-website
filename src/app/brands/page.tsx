@@ -1,18 +1,14 @@
-'use client';
-
 import Link from 'next/link';
 import PageTransition from '@/components/PageTransition';
 import TiltCard from '@/components/TiltCard';
 import ShimmerButton from '@/components/ShimmerButton';
 import Reveal from '@/components/Reveal';
-import { motion } from 'framer-motion';
-import { useRefresh } from '@/contexts/RefreshContext';
-import { ctaInView, quoteInView } from '@/lib/motion';
+import CtaSection from '@/components/CtaSection';
+import QuoteSection from '@/components/QuoteSection';
 
 export default function Brands() {
-  const { refresh } = useRefresh();
   return (
-    <PageTransition refresh={refresh}>
+    <PageTransition>
       <header className="page-hero">
         <div className="container">
           <div className="breadcrumbs">
@@ -164,45 +160,18 @@ export default function Brands() {
       </Reveal>
 
       <Reveal delay={0.1}>
-      <section className="section">
-        <div className="container">
-          <motion.div
-            initial={quoteInView.initial}
-            whileInView={quoteInView.whileInView}
-            viewport={{ once: true }}
-            transition={quoteInView.transition}
-          >
-            <div className="quote">
-              <p>The research does not stop answering when the final presentation ends. Qualisense keeps the evidence accessible to every marketer who needs it.</p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+        <QuoteSection className="section">
+          <p>The research does not stop answering when the final presentation ends. Qualisense keeps the evidence accessible to every marketer who needs it.</p>
+        </QuoteSection>
       </Reveal>
 
       <Reveal delay={0.1}>
-      <section className="cta">
-        <div className="container">
-          <motion.div
-            className="cta-box"
-            initial={ctaInView.initial}
-            whileInView={ctaInView.whileInView}
-            viewport={{ once: true }}
-            transition={ctaInView.transition}
-          >
-            <div>
-              <div className="eyebrow">Recommended first pilot</div>
-              <h2>Start with one recently completed study.</h2>
-              <p>
-                Upload the transcripts, generate the matrix and report, ask 20–30 business questions, then add older related studies for cross-project analysis.
-              </p>
-            </div>
-            <div className="cta-actions">
-              <ShimmerButton className="btn btn-primary" href="/pricing#demo">Create a pilot workspace</ShimmerButton>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+        <CtaSection
+          eyebrow="Recommended first pilot"
+          title="Start with one recently completed study."
+          description="Upload the transcripts, generate the matrix and report, ask 20–30 business questions, then add older related studies for cross-project analysis."
+          actions={<ShimmerButton className="btn btn-primary" href="/pricing#demo">Create a pilot workspace</ShimmerButton>}
+        />
       </Reveal>
     </PageTransition>
   );

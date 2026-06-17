@@ -1,38 +1,13 @@
-'use client';
-
 import Link from 'next/link';
-import Logo from '@/components/Logo';
-import { usePathname } from 'next/navigation';
-import { useRefresh } from '@/contexts/RefreshContext';
+import LogoLink from '@/components/LogoLink';
 
 export function FooterFull() {
-  const pathname = usePathname();
-  const { triggerRefresh } = useRefresh();
-
-  const handleLogoClick = (e: React.MouseEvent) => {
-    if (pathname === '/') {
-      e.preventDefault();
-      triggerRefresh();
-      setTimeout(() => {
-        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-        if (window.location.hash) {
-          window.history.pushState(null, '', pathname);
-        }
-      }, 50);
-    }
-    // On other pages, let Next.js handle it normally
-  };
-
   return (
     <footer className="footer">
       <div className="container">
         <div className="footer-grid">
           <div>
-            <Link className="brand" href="/" onClick={(e) => handleLogoClick(e)}>
-              <span className="logo-mark">
-                <Logo />
-              </span>
-            </Link>
+            <LogoLink />
             <p style={{ color: '#8fa0b1', maxWidth: 360 }}>
               A force multiplier for researchers. Research intelligence for every marketer.
             </p>
@@ -58,19 +33,6 @@ export function FooterFull() {
         <div className="footer-copy">
           <span>&copy; 2026 Qualisense. All rights reserved.</span>
           <span>Built for qualitative depth, speed and reuse.</span>
-        </div>
-      </div>
-    </footer>
-  );
-}
-
-export function FooterSimple() {
-  return (
-    <footer className="footer">
-      <div className="container">
-        <div className="footer-copy" style={{ borderTop: 'none', marginTop: 0 }}>
-          <span>&copy; 2026 Qualisense</span>
-          <Link href="/">Back to homepage</Link>
         </div>
       </div>
     </footer>

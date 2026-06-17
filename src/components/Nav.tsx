@@ -2,36 +2,25 @@
 
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import Logo from '@/components/Logo';
+import LogoLink from '@/components/LogoLink';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import { useRefresh } from '@/contexts/RefreshContext';
-
-const links = [
-  { href: '/product', label: 'Product' },
-  { href: '/agencies', label: 'For Agencies' },
-  { href: '/brands', label: 'For Brand Teams' },
-  { href: '/#difference', label: 'Why Qualisense' },
-  { href: '/security', label: 'Security' },
-];
+import { NAV_LINKS, getNavDemoLabel } from '@/lib/navigation';
 
 export default function Nav() {
   const pathname = usePathname();
-  const { triggerRefresh } = useRefresh();
   const [activeHref, setActiveHref] = useState('');
+  const demoLabel = getNavDemoLabel(pathname);
 
-  // Helper function to calculate active link based on pathname and hash
   const getActiveHref = (path: string, currentHash: string) => {
-    for (const link of links) {
+    for (const link of NAV_LINKS) {
       if (link.href.includes('#')) {
         const [linkPath, linkHash] = link.href.split('#');
         if (path === linkPath && currentHash === '#' + linkHash) {
           return link.href;
         }
-      } else {
-        if (link.href === '/' ? path === '/' : path.startsWith(link.href)) {
-          return link.href;
-        }
+      } else if (path.startsWith(link.href)) {
+        return link.href;
       }
     }
     return '';
@@ -39,44 +28,33 @@ export default function Nav() {
 
   useEffect(() => {
     const handleHashAndPath = () => {
-      const currentHash = window.location.hash;
-      setActiveHref(getActiveHref(pathname, currentHash));
+      setActiveHref(getActiveHref(pathname, window.location.hash));
     };
 
     const handleScroll = () => {
       const currentHash = window.location.hash;
       if (!currentHash) {
-        // No hash, just set active state based on path, don't clear everything
         setActiveHref(getActiveHref(pathname, currentHash));
         return;
       }
 
-      // Check if we're actually at the section (only for hash links!)
       const element = document.querySelector(currentHash);
       if (!element) {
-        // No element, set active state based on path
         setActiveHref(getActiveHref(pathname, currentHash));
         return;
       }
 
       const rect = element.getBoundingClientRect();
-      // Be more generous about when we're "at" the section
       const isNearElement = rect.top <= 400 && rect.bottom >= -100;
 
-      if (isNearElement) {
-        // If near, keep hash link active
-        setActiveHref(pathname + currentHash);
-      } else {
-        // Otherwise, set active state based on current path, NOT blank!
-        setActiveHref(getActiveHref(pathname, ''));
-      }
+      setActiveHref(
+        isNearElement ? pathname + currentHash : getActiveHref(pathname, '')
+      );
     };
 
     window.addEventListener('hashchange', handleHashAndPath);
     window.addEventListener('popstate', handleHashAndPath);
     window.addEventListener('scroll', handleScroll, { passive: true });
-
-    // Initial and pathname-based sync
     handleHashAndPath();
 
     return () => {
@@ -88,79 +66,45 @@ export default function Nav() {
 
   const handleLinkClick = (href: string, e: React.MouseEvent) => {
     document.querySelector('.nav')?.classList.remove('open');
-    if (href.includes('#')) {
-      const [linkPath, linkHash] = href.split('#');
-      if (linkPath === pathname) {
-        // Same page hash link - handle manually
-        e.preventDefault();
-        const element = document.getElementById(linkHash);
 
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-          window.history.pushState(null, '', href);
-          setActiveHref(href);
-        }
-      } else {
-        // Cross page - let Next.js handle it normally
-        setActiveHref(href);
-        // We'll handle the scroll when we get to the page
-      }
-    } else {
-      // Regular link - just set active href
+    if (!href.includes('#')) {
       setActiveHref(href);
+      return;
     }
-  };
 
-  const handleClearActive = () => {
-    setActiveHref('');
-  };
-
-  const handleToggle = () => {
-    document.querySelector('.nav')?.classList.toggle('open');
-  };
-
-  const handleLogoClick = (e: React.MouseEvent) => {
-    // Only prevent default if we're already on home page
-    if (pathname === '/') {
+    const [linkPath, linkHash] = href.split('#');
+    if (linkPath === pathname) {
       e.preventDefault();
-      handleClearActive();
-      // Trigger refresh animation!
-      triggerRefresh();
-      // Wait a tiny bit for animation to start, then scroll to top
-      setTimeout(() => {
-        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-        if (window.location.hash) {
-          window.history.pushState(null, '', pathname);
-        }
-      }, 50);
-    } else {
-      // On other pages, let Next.js handle navigation normally
-      // Just clear active state and let it go
-      handleClearActive();
-      // We'll let PageTransition handle scrolling to top when it gets there
+      const element = document.getElementById(linkHash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        window.history.pushState(null, '', href);
+        setActiveHref(href);
+      }
+      return;
     }
+
+    setActiveHref(href);
   };
+
+  const handleClearActive = () => setActiveHref('');
 
   return (
     <nav className="nav">
       <div className="container nav-inner">
-        <Link className="brand" href="/" onClick={(e) => handleLogoClick(e)}>
-          <span className="logo-mark">
-            <Logo priority />
-          </span>
-        </Link>
+        <LogoLink priority onBeforeNavigate={handleClearActive} />
         <div className="nav-links">
-          {links.map((link) => {
-              const isActive = link.href === activeHref;
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  style={{ position: 'relative' }}
-                  onClick={(e) => handleLinkClick(link.href, e)}
-                >
+          {NAV_LINKS.map((link) => {
+            const isActive = link.href === activeHref;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                style={{ position: 'relative' }}
+                onClick={(e) => handleLinkClick(link.href, e)}
+              >
                 {link.label}
-                {isActive && (
+                {isActive ? (
                   <motion.div
                     layoutId="nav-active"
                     style={{
@@ -174,7 +118,7 @@ export default function Nav() {
                     }}
                     transition={{ type: 'spring', stiffness: 300, damping: 25 }}
                   />
-                )}
+                ) : null}
               </Link>
             );
           })}
@@ -191,19 +135,15 @@ export default function Nav() {
               href="/pricing#demo"
               onClick={(e) => { handleClearActive(); handleLinkClick('/pricing#demo', e); }}
             >
-              {pathname === '/security' ? 'Discuss requirements' : 'Book a demo'}
+              {demoLabel}
             </Link>
           </div>
         </div>
         <div className="nav-actions">
           <Link className="btn btn-ghost nav-pricing" href="/pricing" onClick={(e) => { handleClearActive(); handleLinkClick('/pricing', e); }}>Pricing</Link>
           <a className="btn btn-ghost" href="https://lab.quali-sense.ai/" target="_blank" rel="noopener noreferrer">Sign in</a>
-          {pathname === '/security' ? (
-            <Link className="btn btn-primary" href="/pricing#demo" onClick={(e) => { handleClearActive(); handleLinkClick('/pricing#demo', e); }}>Discuss requirements</Link>
-          ) : (
-            <Link className="btn btn-primary" href="/pricing#demo" onClick={(e) => { handleClearActive(); handleLinkClick('/pricing#demo', e); }}>Book a demo</Link>
-          )}
-          <button className="mobile-toggle" aria-label="Open menu" onClick={handleToggle}>
+          <Link className="btn btn-primary" href="/pricing#demo" onClick={(e) => { handleClearActive(); handleLinkClick('/pricing#demo', e); }}>{demoLabel}</Link>
+          <button className="mobile-toggle" aria-label="Open menu" onClick={() => document.querySelector('.nav')?.classList.toggle('open')}>
             ☰
           </button>
         </div>

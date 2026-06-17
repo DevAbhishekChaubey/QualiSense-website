@@ -1,15 +1,14 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import PageTransition from '@/components/PageTransition';
 import AnimatedTabs from '@/components/AnimatedTabs';
 import TiltCard from '@/components/TiltCard';
 import ShimmerButton from '@/components/ShimmerButton';
 import Reveal from '@/components/Reveal';
-import { useRefresh } from '@/contexts/RefreshContext';
-import { ctaInView, tabPanel } from '@/lib/motion';
+import CtaSection from '@/components/CtaSection';
+import { tabPanel } from '@/lib/motion';
 
 const tabs = [
   { id: 'tab1', label: 'Live interviewing' },
@@ -20,15 +19,14 @@ const tabs = [
 ];
 
 export default function Product() {
-  const { refresh } = useRefresh();
   const [activeTab, setActiveTab] = useState('tab1');
   const [prevTab, setPrevTab] = useState('tab1');
 
-  const getTabIndex = (id: string) => tabs.findIndex(t => t.id === id);
+  const getTabIndex = (id: string) => tabs.findIndex((t) => t.id === id);
   const direction = getTabIndex(activeTab) >= getTabIndex(prevTab) ? 1 : -1;
 
   return (
-    <PageTransition refresh={refresh}>
+    <PageTransition>
       <header className="page-hero">
         <div className="container">
           <div className="eyebrow">The Qualisense platform</div>
@@ -178,23 +176,11 @@ export default function Product() {
       </Reveal>
 
       <Reveal delay={0.1}>
-      <section className="cta">
-        <div className="container">
-          <motion.div
-            className="cta-box"
-            initial={ctaInView.initial}
-            whileInView={ctaInView.whileInView}
-            viewport={{ once: true }}
-            transition={ctaInView.transition}
-          >
-            <div>
-              <h2>See the platform on your own research material.</h2>
-              <p>A real project is the best way to evaluate the quality of the interviewing, structure and analysis.</p>
-            </div>
-            <ShimmerButton className="btn btn-primary" href="/pricing#demo">Request a pilot</ShimmerButton>
-          </motion.div>
-        </div>
-      </section>
+        <CtaSection
+          title="See the platform on your own research material."
+          description="A real project is the best way to evaluate the quality of the interviewing, structure and analysis."
+          actions={<ShimmerButton className="btn btn-primary" href="/pricing#demo">Request a pilot</ShimmerButton>}
+        />
       </Reveal>
     </PageTransition>
   );

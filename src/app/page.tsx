@@ -6,32 +6,15 @@ import Reveal from '@/components/Reveal';
 import TextGenerate from '@/components/TextGenerate';
 import TiltCard from '@/components/TiltCard';
 import ShimmerButton from '@/components/ShimmerButton';
-import { useCountUp } from '@/hooks/useCountUp';
+import StatCard from '@/components/StatCard';
+import CtaSection from '@/components/CtaSection';
+import QuoteSection from '@/components/QuoteSection';
 import { motion } from 'framer-motion';
-import { useRefresh } from '@/contexts/RefreshContext';
-import { stagger, fadeUp, ctaInView, quoteInView, DURATION, BLUR, EASE } from '@/lib/motion';
-
-function StatCard({ value, label, desc, delay = 0, prefix = '', suffix = '' }: { value: number; label: string; desc: string; delay?: number; prefix?: string; suffix?: string }) {
-  const { count, ref } = useCountUp(value, 800);
-  return (
-    <motion.div
-      ref={ref}
-      className="stat"
-      initial={{ opacity: 0, y: 12, filter: BLUR.subtle }}
-      whileInView={{ opacity: 1, y: 0, filter: BLUR.out }}
-      viewport={{ once: true }}
-      transition={{ duration: DURATION.item, delay }}
-    >
-      <strong>{prefix}{count}{suffix}</strong>
-      <span>{desc}</span>
-    </motion.div>
-  );
-}
+import { stagger, fadeUp, slideInView } from '@/lib/motion';
 
 export default function Home() {
-  const { refresh } = useRefresh();
   return (
-    <PageTransition refresh={refresh}>
+    <PageTransition>
       <header className="hero">
         <div className="container hero-grid">
           <motion.div variants={stagger} initial="hidden" animate="show">
@@ -55,9 +38,9 @@ export default function Home() {
           </motion.div>
           <motion.div
             className="hero-visual"
-            initial={{ opacity: 0, x: 24, filter: BLUR.emphasis }}
-            animate={{ opacity: 1, x: 0, filter: BLUR.out }}
-            transition={{ duration: DURATION.hero, delay: 0.15, ease: EASE }}
+            initial={slideInView.initial}
+            animate={slideInView.whileInView}
+            transition={{ ...slideInView.transition, delay: 0.15 }}
           >
             <div className="dashboard">
               <div className="window-bar">
@@ -117,10 +100,10 @@ export default function Home() {
       <Reveal>
       <section>
         <div className="container stat-row">
-          <StatCard value={100} suffix="%" label="Natural depth" desc="adaptive probing that follows the respondent" delay={0} />
-          <StatCard value={1} prefix="" label="1 → many" desc="query one project or multiple studies" delay={0.05} />
-          <StatCard value={4} label=" " suffix="" desc="modular ways to use the platform" delay={0.1} />
-          <StatCard value={100} suffix="%" label="Always on" desc="research intelligence beyond the final report" delay={0.15} />
+          <StatCard value={100} suffix="%" desc="adaptive probing that follows the respondent" delay={0} />
+          <StatCard value={1} desc="query one project or multiple studies" delay={0.05} />
+          <StatCard value={4} desc="modular ways to use the platform" delay={0.1} />
+          <StatCard value={100} suffix="%" desc="research intelligence beyond the final report" delay={0.15} />
         </div>
       </section>
 
@@ -299,47 +282,24 @@ export default function Home() {
       </Reveal>
 
       <Reveal delay={0.1}>
-      <section className="section alt">
-        <div className="container">
-          <motion.div
-            initial={quoteInView.initial}
-            whileInView={quoteInView.whileInView}
-            viewport={{ once: true }}
-            transition={quoteInView.transition}
-          >
-            <div className="quote">
-              <p>&ldquo;A force multiplier for researchers. A living consumer intelligence layer for marketers.&rdquo;</p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+        <QuoteSection className="section alt">
+          <p>&ldquo;A force multiplier for researchers. A living consumer intelligence layer for marketers.&rdquo;</p>
+        </QuoteSection>
       </Reveal>
 
       <Reveal delay={0.1}>
-      <section className="cta" id="demo">
-        <div className="container">
-          <motion.div
-            className="cta-box"
-            initial={ctaInView.initial}
-            whileInView={ctaInView.whileInView}
-            viewport={{ once: true }}
-            transition={ctaInView.transition}
-          >
-            <div>
-              <div className="eyebrow">Start with one project</div>
-              <h2><TextGenerate text="Turn a completed or live study into a reusable intelligence asset." /></h2>
-              <p>
-                Upload a recent project, run a set of business questions and see how Qualisense changes what your team can do with qualitative research.
-              </p>
-            </div>
-            <div className="cta-actions">
+        <CtaSection
+          id="demo"
+          eyebrow="Start with one project"
+          title={<TextGenerate text="Turn a completed or live study into a reusable intelligence asset." />}
+          description="Upload a recent project, run a set of business questions and see how Qualisense changes what your team can do with qualitative research."
+          actions={
+            <>
               <ShimmerButton className="btn btn-primary" href="/pricing#demo">Request a pilot</ShimmerButton>
               <ShimmerButton className="btn btn-secondary" href="/product">Explore the product</ShimmerButton>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
+            </>
+          }
+        />
       </Reveal>
     </PageTransition>
   );

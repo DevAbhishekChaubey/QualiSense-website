@@ -1,18 +1,13 @@
-'use client';
-
 import Link from 'next/link';
 import PageTransition from '@/components/PageTransition';
 import TiltCard from '@/components/TiltCard';
 import ShimmerButton from '@/components/ShimmerButton';
 import Reveal from '@/components/Reveal';
-import { motion } from 'framer-motion';
-import { useRefresh } from '@/contexts/RefreshContext';
-import { ctaInView } from '@/lib/motion';
+import CtaSection from '@/components/CtaSection';
 
 export default function Agencies() {
-  const { refresh } = useRefresh();
   return (
-    <PageTransition refresh={refresh}>
+    <PageTransition>
       <header className="page-hero">
         <div className="container">
           <div className="breadcrumbs">
@@ -178,28 +173,12 @@ export default function Agencies() {
       </Reveal>
 
       <Reveal delay={0.1}>
-      <section className="cta">
-        <div className="container">
-          <motion.div
-            className="cta-box"
-            initial={ctaInView.initial}
-            whileInView={ctaInView.whileInView}
-            viewport={{ once: true }}
-            transition={ctaInView.transition}
-          >
-            <div>
-              <div className="eyebrow">Agency pilot</div>
-              <h2>Test Qualisense on one completed or live project.</h2>
-              <p>
-                Upload 5–10 interviews, generate the matrix and report, then use project chat to compare output against your current workflow.
-              </p>
-            </div>
-            <div className="cta-actions">
-              <ShimmerButton className="btn btn-primary" href="/pricing#demo">Start a pilot</ShimmerButton>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+        <CtaSection
+          eyebrow="Agency pilot"
+          title="Test Qualisense on one completed or live project."
+          description="Upload 5–10 interviews, generate the matrix and report, then use project chat to compare output against your current workflow."
+          actions={<ShimmerButton className="btn btn-primary" href="/pricing#demo">Start a pilot</ShimmerButton>}
+        />
       </Reveal>
     </PageTransition>
   );

@@ -1404,3 +1404,56 @@ h3 {
 .nav-inner, .hero-grid, .section-head, .audience-grid, .cards, .workflow, .compare, .cta-box, .footer-grid {
   width: 100%;
 }
+
+.spotlight {
+  position: fixed;
+  pointer-events: none;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.spotlight-orb {
+  position: absolute;
+  border-radius: 50%;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.spotlight-orb-a {
+  top: 15%;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(103, 169, 255, 0.12) 0%, rgba(118, 228, 212, 0.08) 40%, transparent 70%);
+  filter: blur(40px);
+  animation-name: spotlightDriftA;
+  animation-duration: 12s;
+}
+
+.spotlight-orb-b {
+  bottom: 20%;
+  right: 10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(57, 120, 212, 0.10) 0%, transparent 60%);
+  filter: blur(50px);
+  animation-name: spotlightDriftB;
+  animation-duration: 15s;
+}
+
+@keyframes spotlightDriftA {
+  0% { transform: translateX(-50%) translate(0, 0); }
+  33% { transform: translateX(-50%) translate(30px, -40px); }
+  66% { transform: translateX(-50%) translate(-20px, 20px); }
+  100% { transform: translateX(-50%) translate(10px, -10px); }
+}
+
+@keyframes spotlightDriftB {
+  0% { transform: translate(0, 0); }
+  33% { transform: translate(-30px, 30px); }
+  66% { transform: translate(20px, -40px); }
+  100% { transform: translate(-10px, 20px); }
+}
