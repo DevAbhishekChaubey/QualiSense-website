@@ -57,7 +57,7 @@ export default function DemoForm() {
     if (!accessKey || accessKey === 'your_web3forms_access_key_here') {
       console.warn('Web3Forms access key is missing or set to placeholder. Simulating successful form submission in development.');
       await new Promise((resolve) => setTimeout(resolve, 1000));
-      router.push('/thank-you');
+      window.location.href = '/thank-you';
       return;
     }
 
