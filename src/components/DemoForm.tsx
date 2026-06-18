@@ -55,8 +55,16 @@ export default function DemoForm() {
     setState('submitting');
     setErrorMsg('');
 
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+    if (!accessKey || accessKey === 'your_web3forms_access_key_here') {
+      console.warn('Web3Forms access key is missing or set to placeholder. Simulating successful form submission in development.');
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      router.push('/thank-you');
+      return;
+    }
+
     const payload = {
-      access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
+      access_key: accessKey,
       name: data.get('name'),
       email: data.get('email'),
       organisation: data.get('organisation'),
