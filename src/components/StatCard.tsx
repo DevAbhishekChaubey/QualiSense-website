@@ -5,7 +5,8 @@ import { useCountUp } from '@/hooks/useCountUp';
 import { BLUR, DURATION } from '@/lib/motion';
 
 type StatCardProps = {
-  value: number;
+  value?: number;
+  label?: string;
   desc: string;
   delay?: number;
   prefix?: string;
@@ -14,12 +15,13 @@ type StatCardProps = {
 
 export default function StatCard({
   value,
+  label,
   desc,
   delay = 0,
   prefix = '',
   suffix = '',
 }: StatCardProps) {
-  const { count, ref } = useCountUp(value, 800);
+  const { count, ref } = useCountUp(value ?? 0, 800);
 
   return (
     <motion.div
@@ -30,7 +32,7 @@ export default function StatCard({
       viewport={{ once: true }}
       transition={{ duration: DURATION.item, delay }}
     >
-      <strong>{prefix}{count}{suffix}</strong>
+      <strong>{label ?? `${prefix}${value !== undefined ? count : ''}${suffix}`}</strong>
       <span>{desc}</span>
     </motion.div>
   );

@@ -698,6 +698,7 @@ h3 {
 .audience ul {
   padding-left: 18px;
   color: #4e6674;
+  list-style-type: disc;
 }
 
 .audience li {

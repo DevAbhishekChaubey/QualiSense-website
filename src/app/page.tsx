@@ -100,10 +100,10 @@ export default function Home() {
       <Reveal>
       <section>
         <div className="container stat-row">
-          <StatCard value={100} suffix="%" desc="adaptive probing that follows the respondent" delay={0} />
-          <StatCard value={1} desc="query one project or multiple studies" delay={0.05} />
+          <StatCard label="Natural depth" desc="adaptive probing that follows the respondent" delay={0} />
+          <StatCard label="1 → many" desc="query one project or multiple studies" delay={0.05} />
           <StatCard value={4} desc="modular ways to use the platform" delay={0.1} />
-          <StatCard value={100} suffix="%" desc="research intelligence beyond the final report" delay={0.15} />
+          <StatCard label="Always on" desc="research intelligence beyond the final report" delay={0.15} />
         </div>
       </section>
 
