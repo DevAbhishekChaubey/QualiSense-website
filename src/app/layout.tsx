@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Icons from "@/components/Icons";
@@ -6,6 +7,12 @@ import DeferredEffects from "@/components/DeferredEffects";
 import { FooterFull } from "@/components/Footer";
 import { RefreshProvider } from "@/contexts/RefreshContext";
 import { LightModeForcer } from "@/components/LightModeForcer";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Qualisense — A Force Multiplier for Researchers",
@@ -25,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="light" data-scroll-behavior="smooth" style={{ colorScheme: 'light' }} suppressHydrationWarning>
+    <html lang="en" className={inter.variable} data-theme="light" data-scroll-behavior="smooth" style={{ colorScheme: 'light' }} suppressHydrationWarning>
       <head>
         <meta name="color-scheme" content="light" />
         <meta name="theme-color" content="#f8fbfc" />

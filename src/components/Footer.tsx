@@ -26,7 +26,7 @@ export function FooterFull() {
           </div>
           <div>
             <h4>Company</h4>
-            <Link href="/security">Security</Link>
+            {/* <Link href="/security">Security</Link> */}
             <Link href="/pricing#demo">Book a demo</Link>
           </div>
         </div>
