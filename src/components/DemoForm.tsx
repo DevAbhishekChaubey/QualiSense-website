@@ -3,14 +3,12 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { slideInView } from '@/lib/motion';
-import { useRouter } from 'next/navigation';
 
 type FormState = 'idle' | 'submitting' | 'error';
 
 const MIN_MESSAGE_LENGTH = 20;
 
 export default function DemoForm() {
-  const router = useRouter();
   const [state, setState] = useState<FormState>('idle');
   const [errorMsg, setErrorMsg] = useState('');
   const [validationErrors, setValidationErrors] = useState<Record<string, string>>({});
@@ -84,7 +82,7 @@ export default function DemoForm() {
       const json = await res.json();
 
       if (res.ok && json.success) {
-        router.push('/thank-you');
+        window.location.href = '/thank-you';
       } else {
         throw new Error(json.message || 'Submission failed. Please try again.');
       }
