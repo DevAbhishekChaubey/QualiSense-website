@@ -33,6 +33,7 @@ export function FooterFull() {
         <div className="footer-copy">
           <span>&copy; 2026 Qualisense. All rights reserved.</span>
           <span>Built for qualitative depth, speed and reuse.</span>
+          <Link href="/terms">Terms &amp; Conditions</Link>
         </div>
       </div>
     </footer>

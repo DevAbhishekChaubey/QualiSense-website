@@ -329,7 +329,7 @@ body {
 }
 
 .hero {
-  padding: 88px 0 62px;
+  padding: 88px 0 72px;
 }
 
 .hero-grid > div:first-child {
@@ -350,7 +350,7 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: clamp(3rem, 6vw, 5.7rem);
+  font-size: clamp(2.8rem, 5.5vw, 5.2rem);
   max-width: 900px;
 }
 
@@ -862,7 +862,19 @@ h3 {
   font-size: .85rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 20px;
+  flex-wrap: nowrap;
+}
+
+.footer-copy a {
+  flex-shrink: 0;
+  color: #687d89;
+  transition: color .2s ease;
+}
+
+.footer-copy a:hover {
+  color: var(--primary);
 }
 
 .page-hero {
@@ -1457,4 +1469,34 @@ h3 {
   33% { transform: translate(-30px, 30px); }
   66% { transform: translate(20px, -40px); }
   100% { transform: translate(-10px, 20px); }
+}
+
+/* Terms & Conditions page */
+.terms-body {
+  max-width: 780px;
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+}
+
+.terms-section {
+  padding-bottom: 42px;
+  border-bottom: 1px solid var(--line);
+}
+
+.terms-section:last-child {
+  border-bottom: none;
+}
+
+.terms-heading {
+  font-size: 1.25rem;
+  color: var(--text);
+  margin-bottom: 12px;
+  letter-spacing: -.02em;
+}
+
+.terms-text {
+  color: var(--muted);
+  line-height: 1.75;
+  margin: 0;
 }

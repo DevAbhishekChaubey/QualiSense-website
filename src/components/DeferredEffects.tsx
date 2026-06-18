@@ -6,7 +6,6 @@ import dynamic from 'next/dynamic';
 const GrainBackground = dynamic(() => import('@/components/GrainBackground'), { ssr: false });
 const GridBackground = dynamic(() => import('@/components/GridBackground'), { ssr: false });
 const Spotlight = dynamic(() => import('@/components/Spotlight'), { ssr: false });
-const CursorFollower = dynamic(() => import('@/components/CursorFollower'), { ssr: false });
 
 export default function DeferredEffects() {
   const [ready, setReady] = useState(false);
@@ -30,7 +29,6 @@ export default function DeferredEffects() {
       <GrainBackground />
       <GridBackground />
       <Spotlight />
-      <CursorFollower />
     </>
   );
 }
