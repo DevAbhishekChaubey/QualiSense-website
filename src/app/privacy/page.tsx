@@ -359,7 +359,7 @@ export default function PrivacyPage() {
             Privacy Policy
           </h1>
           <p className="lede" style={{ maxWidth: 640 }}>
-            This Privacy Policy explains how Qualisense handles personal data relating to website visitors, customer account users and research respondents.
+            How Qualisense collects, uses and protects personal data across our website and platform.
           </p>
           <p style={{ color: 'var(--muted)', fontSize: '.9rem', marginTop: 12 }}>
             Last updated: 16 June 2026

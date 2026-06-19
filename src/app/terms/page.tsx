@@ -351,7 +351,7 @@ export default function TermsPage() {
             Terms &amp; Conditions
           </h1>
           <p className="lede" style={{ maxWidth: 640 }}>
-            These Terms govern access to and use of the Qualisense website, applications and services. They are designed primarily for business customers, including qualitative research agencies, brands, insights teams, marketing teams and authorised research professionals.
+            Terms governing access to and use of the Qualisense platform and services.
           </p>
           <p style={{ color: 'var(--muted)', fontSize: '.9rem', marginTop: 12 }}>
             Last updated: 16 June 2026
