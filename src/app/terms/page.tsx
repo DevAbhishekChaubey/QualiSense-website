@@ -364,7 +364,7 @@ export default function TermsPage() {
           <div className="terms-body">
             {SECTIONS.map((section) => (
               <div key={section.title} className="terms-section">
-                <h2 className="terms-heading">{section.title}</h2>
+                <h3 className="terms-heading">{section.title}</h3>
                 {section.content}
               </div>
             ))}

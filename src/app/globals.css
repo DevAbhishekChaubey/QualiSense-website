@@ -1486,16 +1486,20 @@ h3 {
   max-width: 780px;
   display: flex;
   flex-direction: column;
-  gap: 42px;
+  gap: 0;
 }
 
 .terms-section {
-  padding-bottom: 42px;
-  border-bottom: 1px solid var(--line);
+  padding: 0 0 42px 0;
+  border-bottom: none;
+}
+
+.terms-section + .terms-section {
+  padding-top: 42px;
 }
 
 .terms-section:last-child {
-  border-bottom: none;
+  padding-bottom: 0;
 }
 
 .terms-heading {
@@ -1573,9 +1577,9 @@ h3 {
 }
 
 .privacy-subheading {
-  font-size: .95rem;
-  font-weight: 700;
-  color: var(--text);
+  font-size: .88rem;
+  font-weight: 600;
+  color: var(--muted);
   margin: 16px 0 6px;
   letter-spacing: 0;
 }

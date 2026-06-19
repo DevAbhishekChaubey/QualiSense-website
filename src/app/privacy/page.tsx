@@ -41,7 +41,7 @@ const SECTIONS = [
     title: '3. Personal data we collect',
     content: (
       <>
-        <h3 className="privacy-subheading">3.1 Website, sales and account information</h3>
+        <p className="privacy-subheading">3.1 Website, sales and account information</p>
         <ul>
           <li>Name, business email address, telephone number, job title, company and country</li>
           <li>Account credentials, authentication records, workspace membership and permissions</li>
@@ -49,14 +49,14 @@ const SECTIONS = [
           <li>Billing contact details, transaction information and subscription records</li>
           <li>Preferences for communications, events, product updates and marketing</li>
         </ul>
-        <h3 className="privacy-subheading">3.2 Technical and usage information</h3>
+        <p className="privacy-subheading">3.2 Technical and usage information</p>
         <ul>
           <li>IP address, browser, device, operating system, language, approximate location and referral source</li>
           <li>Login times, pages viewed, features used, actions taken, error logs and performance data</li>
           <li>Security events, audit logs and information used to detect misuse</li>
           <li>Cookie, local-storage and similar technology identifiers</li>
         </ul>
-        <h3 className="privacy-subheading">3.3 Customer Content and research data</h3>
+        <p className="privacy-subheading">3.3 Customer Content and research data</p>
         <ul>
           <li>Audio and video recordings, voice, image and spoken responses</li>
           <li>Transcripts, translations, discussion guides, interview questions and notes</li>
@@ -68,7 +68,7 @@ const SECTIONS = [
         <p>
           Customer Content may contain sensitive or special-category information depending on the study. Customers must minimise such collection and ensure that appropriate notices, permissions and safeguards are in place.
         </p>
-        <h3 className="privacy-subheading">3.4 Live interviewing data</h3>
+        <p className="privacy-subheading">3.4 Live interviewing data</p>
         <p>
           When a Customer uses the live interviewing agent, the Service may process Respondent audio, text responses, language, interaction timing and contextual signals needed to conduct and transcribe the interview. The Service is not intended to identify individuals using biometric templates, and Qualisense does not use voice recordings for biometric identification.
         </p>
