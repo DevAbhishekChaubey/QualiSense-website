@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 
-const GrainBackground = dynamic(() => import('@/components/GrainBackground'), { ssr: false });
 const GridBackground = dynamic(() => import('@/components/GridBackground'), { ssr: false });
 const Spotlight = dynamic(() => import('@/components/Spotlight'), { ssr: false });
 
@@ -26,7 +25,6 @@ export default function DeferredEffects() {
 
   return (
     <>
-      <GrainBackground />
       <GridBackground />
       <Spotlight />
     </>

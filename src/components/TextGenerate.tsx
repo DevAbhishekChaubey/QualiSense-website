@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { textWord } from '@/lib/motion';
+import { DURATION, EASE } from '@/lib/motion';
 
 export default function TextGenerate({
   text,
@@ -12,22 +12,16 @@ export default function TextGenerate({
   className?: string;
   once?: boolean;
 }) {
-  const words = text.split(' ');
-
   return (
-    <span className={className} style={{ display: 'inline' }}>
-      {words.map((word, i) => (
-        <motion.span
-          key={i}
-          initial={textWord.initial}
-          whileInView={textWord.whileInView}
-          viewport={{ once }}
-          transition={{ ...textWord.transition, delay: i * textWord.wordDelay }}
-          style={{ display: 'inline-block', marginRight: '0.25em' }}
-        >
-          {word}
-        </motion.span>
-      ))}
-    </span>
+    <motion.span
+      className={className}
+      initial={{ opacity: 0, y: 12 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once }}
+      transition={{ duration: DURATION.section, ease: EASE }}
+      style={{ display: 'inline' }}
+    >
+      {text}
+    </motion.span>
   );
 }

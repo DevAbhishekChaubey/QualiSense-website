@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useCountUp } from '@/hooks/useCountUp';
-import { BLUR, DURATION } from '@/lib/motion';
+import { DURATION } from '@/lib/motion';
 
 type StatCardProps = {
   value?: number;
@@ -27,8 +27,8 @@ export default function StatCard({
     <motion.div
       ref={ref}
       className="stat"
-      initial={{ opacity: 0, y: 12, filter: BLUR.subtle }}
-      whileInView={{ opacity: 1, y: 0, filter: BLUR.out }}
+      initial={{ opacity: 0, y: 12 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: DURATION.item, delay }}
     >

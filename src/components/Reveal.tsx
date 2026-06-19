@@ -8,8 +8,9 @@ export default function Reveal({ children, delay = 0 }: { children: React.ReactN
     <motion.div
       initial={reveal.initial}
       whileInView={reveal.whileInView}
-      viewport={{ once: true, margin: '-60px' }}
+      viewport={{ once: true, margin: '-40px' }}
       transition={{ ...reveal.transition, delay }}
+      style={{ willChange: 'opacity, transform' }}
     >
       {children}
     </motion.div>
