@@ -153,7 +153,7 @@ export default function Product() {
               <h2>Four clear ways to buy.</h2>
             </div>
           </div>
-          <div className="cards" style={{ gridTemplateColumns: 'repeat(4, 1fr)' }}>
+          <div className="cards product-modules">
             <TiltCard className="card">
               <h3>Transcription only</h3>
               <p>For teams that need clean transcript output.</p>

@@ -1622,3 +1622,36 @@ h3 {
 .privacy-link:hover {
   opacity: 0.75;
 }
+
+/* Product page */
+.product-modules {
+  grid-template-columns: repeat(4, 1fr) !important;
+}
+
+@media (max-width: 980px) {
+  .product-modules {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 680px) {
+  .product-modules {
+    grid-template-columns: 1fr !important;
+  }
+
+  .product-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+  }
+
+  .product-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-btn {
+    flex-shrink: 0;
+  }
+}
