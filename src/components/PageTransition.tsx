@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useRefresh } from '@/contexts/RefreshContext';
 import { pageTransition } from '@/lib/motion';
 import { scrollToHashOrTop } from '@/lib/scroll';
@@ -10,11 +10,7 @@ import { scrollToHashOrTop } from '@/lib/scroll';
 export default function PageTransition({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const { refresh } = useRefresh();
-  const [key, setKey] = useState(`${pathname}-${refresh}`);
-
-  useEffect(() => {
-    setKey(`${pathname}-${refresh}`);
-  }, [pathname, refresh]);
+  const key = `${pathname}-${refresh}`;
 
   useEffect(() => {
     scrollToHashOrTop();

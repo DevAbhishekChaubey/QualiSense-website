@@ -5,6 +5,6 @@ export const NAV_LINKS = [
   { href: '/#difference', label: 'Why Qualisense' },
 ] as const;
 
-export function getNavDemoLabel(pathname: string): string {
+export function getNavDemoLabel(_pathname: string): string {
   return 'Book a demo';
 }

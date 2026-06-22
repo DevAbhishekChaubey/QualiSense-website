@@ -13,7 +13,7 @@ const SECTIONS = [
     content: (
       <>
         <p>
-          Qualisense is a qualitative-research software platform operated by Graphiti Research Technologies Private Limited, with its registered office at 814, Galleria Office Tower, DLF Phase 4, Gurgaon, Haryana, India, 122009 ("Qualisense", "we", "us" or "our"). This Policy applies to quali-sense.ai, the Qualisense platform, related applications, sales and support interactions, and other services that link to this Policy.
+          Qualisense is a qualitative-research software platform operated by Graphiti Research Technologies Private Limited, with its registered office at 814, Galleria Office Tower, DLF Phase 4, Gurgaon, Haryana, India, 122009 (&quot;Qualisense&quot;, &quot;we&quot;, &quot;us&quot; or &quot;our&quot;). This Policy applies to quali-sense.ai, the Qualisense platform, related applications, sales and support interactions, and other services that link to this Policy.
         </p>
         <p>
           This Policy does not govern the independent privacy practices of our Customers, respondent-recruitment providers, research agencies or other third parties. Their own notices may also apply.
@@ -28,7 +28,7 @@ const SECTIONS = [
         <p>Qualisense may have different legal roles depending on the data and context:</p>
         <ul>
           <li><strong>Controller / Data Fiduciary:</strong> We determine why and how we process website, account, billing, sales, security and support data for our own business purposes.</li>
-          <li><strong>Processor / Data Processor / Service Provider:</strong> For Customer Content, including Respondent recordings, transcripts and research data, the Customer generally determines the research purpose and means. We process that data on the Customer's documented instructions under our agreement and DPA.</li>
+          <li><strong>Processor / Data Processor / Service Provider:</strong> For Customer Content, including Respondent recordings, transcripts and research data, the Customer generally determines the research purpose and means. We process that data on the Customer&apos;s documented instructions under our agreement and DPA.</li>
           <li><strong>Independent third parties:</strong> Fieldwork, respondent-recruitment, payment, integration and other providers may act under their own privacy notices where they determine their own purposes.</li>
         </ul>
         <p>
@@ -115,7 +115,7 @@ const SECTIONS = [
           <li>Other permitted uses or lawful grounds available under applicable data-protection law</li>
         </ul>
         <p>
-          For Customer Content, our Customer is responsible for identifying and documenting the lawful basis for the underlying research. We process the data under the Customer's instructions and the DPA.
+          For Customer Content, our Customer is responsible for identifying and documenting the lawful basis for the underlying research. We process the data under the Customer&apos;s instructions and the DPA.
         </p>
       </>
     ),
@@ -148,7 +148,7 @@ const SECTIONS = [
           <li>Respondent-recruitment and fieldwork providers where requested or authorised by the Customer</li>
           <li>Government authorities, courts or other parties where required by law or necessary to protect rights and safety</li>
           <li>An acquirer, investor or successor in connection with a merger, financing, reorganisation or sale, subject to appropriate confidentiality</li>
-          <li>Other parties with the individual's or Customer's direction or consent</li>
+          <li>Other parties with the individual&apos;s or Customer&apos;s direction or consent</li>
         </ul>
         <p>We do not disclose Customer Content to other customers.</p>
       </>
@@ -253,7 +253,7 @@ const SECTIONS = [
           We may verify identity and authority before acting. We will respond within the period required by applicable law.
         </p>
         <p>
-          For personal data in a Customer's research project, contact the Customer or research sponsor identified in the study notice. If you contact us, we may refer the request to that Customer and assist them as required.
+          For personal data in a Customer&apos;s research project, contact the Customer or research sponsor identified in the study notice. If you contact us, we may refer the request to that Customer and assist them as required.
         </p>
       </>
     ),
@@ -288,7 +288,7 @@ const SECTIONS = [
     content: (
       <>
         <p>
-          Where India's Digital Personal Data Protection framework applies, individuals may have rights to access information about processing, correction, completion, updating and erasure, grievance redressal and nomination, subject to applicable commencement dates, rules and exemptions. Requests and grievances may be sent to{' '}
+          Where India&apos;s Digital Personal Data Protection framework applies, individuals may have rights to access information about processing, correction, completion, updating and erasure, grievance redressal and nomination, subject to applicable commencement dates, rules and exemptions. Requests and grievances may be sent to{' '}
           <a href="mailto:contact@quali-sense.ai" className="privacy-link">contact@quali-sense.ai</a>.
         </p>
         <p>
@@ -305,7 +305,7 @@ const SECTIONS = [
           The website and platform are not directed to children under 18. We do not knowingly create platform accounts for children. Customers must not use the Service to interview or process information about children or vulnerable individuals unless the study is lawful, ethically appropriate, covered by required parental or guardian consent, and agreed with Qualisense where additional safeguards are needed.
         </p>
         <p>
-          If you believe a child's data has been submitted unlawfully, contact{' '}
+          If you believe a child&apos;s data has been submitted unlawfully, contact{' '}
           <a href="mailto:contact@quali-sense.ai" className="privacy-link">contact@quali-sense.ai</a>{' '}
           and identify the relevant Customer or study where possible.
         </p>
