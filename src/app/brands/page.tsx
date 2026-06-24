@@ -11,9 +11,6 @@ export default function Brands() {
     <PageTransition>
       <header className="page-hero">
         <div className="container">
-          <div className="breadcrumbs">
-            <Link href="/">Home</Link> / For Brand Teams
-          </div>
           <div className="eyebrow">Qualisense for brand teams</div>
           <h1>Research intelligence for every marketer.</h1>
           <p className="lede">

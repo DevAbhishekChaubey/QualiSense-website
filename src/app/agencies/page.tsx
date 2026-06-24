@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import PageTransition from '@/components/PageTransition';
 import TiltCard from '@/components/TiltCard';
 import ShimmerButton from '@/components/ShimmerButton';
@@ -10,9 +9,6 @@ export default function Agencies() {
     <PageTransition>
       <header className="page-hero">
         <div className="container">
-          <div className="breadcrumbs">
-            <Link href="/">Home</Link> / For Research Agencies
-          </div>
           <div className="eyebrow">Qualisense for agencies</div>
           <h1>A force multiplier for researchers.</h1>
           <p className="lede">
