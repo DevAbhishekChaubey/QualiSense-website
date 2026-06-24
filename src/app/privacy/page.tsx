@@ -355,7 +355,7 @@ export default function PrivacyPage() {
       <div className="page-hero" style={{ paddingBottom: 0 }}>
         <div className="container">
           <div className="eyebrow">Legal</div>
-          <h1 style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)', marginBottom: 12 }}>
+          <h1 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', marginBottom: 12 }}>
             Privacy Policy
           </h1>
           <p className="lede" style={{ maxWidth: 640 }}>

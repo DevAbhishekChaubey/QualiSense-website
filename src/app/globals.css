@@ -344,22 +344,22 @@ body {
 }
 
 h1, h2, h3 {
-  line-height: 1.08;
+  line-height: 1.1;
   margin: 0 0 18px;
-  letter-spacing: -.035em;
+  letter-spacing: -.03em;
 }
 
 h1 {
-  font-size: clamp(2.8rem, 5.5vw, 5.2rem);
+  font-size: clamp(2.4rem, 4.5vw, 4.2rem);
   max-width: 900px;
 }
 
 h2 {
-  font-size: clamp(2.1rem, 4.4vw, 4rem);
+  font-size: clamp(1.8rem, 3.5vw, 3.2rem);
 }
 
 h3 {
-  font-size: 1.35rem;
+  font-size: 1.2rem;
 }
 
 .lede {
@@ -1201,8 +1201,8 @@ h3 {
   }
 
   h1 {
-    font-size: 2rem !important;
-    line-height: 1.25 !important;
+    font-size: 1.75rem !important;
+    line-height: 1.2 !important;
   }
 
   .hero h1 br {
@@ -1210,12 +1210,12 @@ h3 {
   }
 
   h2 {
-    font-size: 1.6rem !important;
-    line-height: 1.25 !important;
+    font-size: 1.4rem !important;
+    line-height: 1.2 !important;
   }
 
   h3 {
-    font-size: 1.25rem !important;
+    font-size: 1.1rem !important;
   }
 
   .lede {
@@ -1369,8 +1369,8 @@ h3 {
   }
 
   h1 {
-    font-size: 1.8rem !important;
-    line-height: 1.25 !important;
+    font-size: 1.6rem !important;
+    line-height: 1.2 !important;
   }
 
   .hero-actions {
