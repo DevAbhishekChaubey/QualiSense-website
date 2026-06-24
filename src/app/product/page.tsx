@@ -30,7 +30,7 @@ export default function Product() {
       <header className="page-hero">
         <div className="container">
           <div className="eyebrow">The Qualisense platform</div>
-          <h1>One platform to conduct, analyse and reuse qualitative research.</h1>
+          <h1>Everything needed to conduct, analyse and reuse qualitative research.</h1>
           <p className="lede">Use the full workflow or only the modules your team needs.</p>
         </div>
       </header>
