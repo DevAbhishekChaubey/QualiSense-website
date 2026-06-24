@@ -17,7 +17,7 @@ export default function Brands() {
           <div className="eyebrow">Qualisense for brand teams</div>
           <h1>Research intelligence for every marketer.</h1>
           <p className="lede">
-            Turn completed and future qualitative studies into searchable, reusable intelligence—accessible to marketing, innovation, insights and strategy teams whenever a new question arises.
+            Turn completed and future studies into searchable, reusable intelligence. Accessible to marketing, innovation, insights and strategy teams on demand.
           </p>
           <div className="hero-actions">
             <ShimmerButton className="btn btn-primary" href="/pricing#demo">Pilot with a completed study</ShimmerButton>
@@ -84,7 +84,7 @@ export default function Brands() {
             <div className="eyebrow">Project chat</div>
             <h2>Ask the study what you need to know.</h2>
             <p className="lede">
-              Teams can query the project directly and explore the underlying consumer evidence—no deck-searching, no waiting for additional analysis.
+              Teams can query the project directly and explore the underlying consumer evidence. No deck-searching, no waiting for additional analysis.
             </p>
           </div>
           <TiltCard className="card">

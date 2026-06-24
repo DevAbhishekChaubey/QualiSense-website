@@ -16,7 +16,7 @@ export default function Agencies() {
           <div className="eyebrow">Qualisense for agencies</div>
           <h1>A force multiplier for researchers.</h1>
           <p className="lede">
-            Scale capacity across interviewing, transcription, matrix creation and reporting—while researchers stay focused on interpretation and strategic thinking.
+            Scale capacity across interviewing, transcription, matrix creation and reporting. Researchers stay focused on interpretation and strategic thinking.
           </p>
           <div className="hero-actions">
             <ShimmerButton className="btn btn-primary" href="/pricing#demo">Start an agency pilot</ShimmerButton>
@@ -32,7 +32,7 @@ export default function Agencies() {
             <div className="eyebrow">The agency challenge</div>
             <h2>Qualitative delivery runs on manual effort.</h2>
             <p className="lede">
-              Hours lost to transcript checking, translation coordination, analysis grids and first-cut reports—before any insight is written.
+              Hours lost to transcript checking, translation coordination, analysis grids and first-cut reports. Before a single insight is written.
             </p>
           </div>
           <TiltCard className="card sticky-card">
@@ -107,7 +107,7 @@ export default function Agencies() {
           </div>
           <TiltCard className="card">
             <span className="badge">Adaptive, contextual probing</span>
-            <h3 style={{ marginTop: 18 }}>Interviews that follow the respondent—not just the script.</h3>
+            <h3 style={{ marginTop: 18 }}>Interviews that follow the respondent. Not just the script.</h3>
             <p>
               Sustains natural conversational flow and probes for depth where a skilled researcher would expect it.
             </p>

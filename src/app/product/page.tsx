@@ -30,7 +30,7 @@ export default function Product() {
       <header className="page-hero">
         <div className="container">
           <div className="eyebrow">The Qualisense platform</div>
-          <h1>Conduct, analyse and reuse qualitative research—in one platform.</h1>
+          <h1>One platform to conduct, analyse and reuse qualitative research.</h1>
           <p className="lede">Use the full workflow or only the modules your team needs.</p>
         </div>
       </header>
@@ -60,7 +60,7 @@ export default function Product() {
                   <>
                     <div>
                       <div className="eyebrow">Live interviewing agent</div>
-                      <h2>Depth interviews that follow the respondent—not just the script.</h2>
+                      <h2>Depth interviews that follow the respondent. Not just the script.</h2>
                       <p className="lede">Follows the discussion guide, listens and probes where deeper exploration is needed.</p>
                       <div className="list-check">
                         <div>Multiple languages</div>

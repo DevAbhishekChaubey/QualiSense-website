@@ -24,7 +24,7 @@ export default function Home() {
               <span className="hero-highlight"><TextGenerate text="Research intelligence for every marketer." /></span>
             </motion.h1>
             <motion.p variants={fadeUp} className="lede">
-              One workspace for live interviewing, transcription, matrix analysis, insight reports and cross-project chat—built for research teams and the marketers they serve.
+              Live interviewing, transcription, matrix analysis, insight reports and cross-project chat. One workspace for research teams and the marketers they serve.
             </motion.p>
             <motion.div variants={fadeUp} className="hero-actions">
               <ShimmerButton className="btn btn-primary" href="/agencies">Explore for agencies</ShimmerButton>
@@ -123,7 +123,7 @@ export default function Home() {
               <TiltCard className="audience">
                 <h3>A force multiplier for researchers</h3>
                 <p>
-                  Scale delivery across interviewing, transcription, matrix creation and reporting—while researchers stay focused on interpretation.
+                  Scale delivery across interviewing, transcription, matrix creation and reporting. Researchers stay focused on interpretation.
                 </p>
                 <ul>
                   <li>Faster project delivery</li>
@@ -159,7 +159,7 @@ export default function Home() {
             <motion.div variants={fadeUp} className="section-head">
               <div>
                 <div className="eyebrow">The complete intelligence loop</div>
-                <h2><TextGenerate text="From discussion guide to decisions—and back to the evidence." /></h2>
+                <h2><TextGenerate text="From discussion guide to decisions. Back to the evidence." /></h2>
               </div>
               <p>Use the full workflow or only the modules you need.</p>
             </motion.div>
@@ -177,7 +177,7 @@ export default function Home() {
               <TiltCard className="card">
                 <div className="icon"><svg><use href="#grid" /></svg></div>
                 <h3>Analysis matrix</h3>
-                <p>Responses organised by question and respondent before synthesis—structured and traceable.</p>
+                <p>Responses organised by question and respondent before synthesis. Structured and traceable.</p>
               </TiltCard>
               <TiltCard className="card">
                 <div className="icon"><svg><use href="#spark" /></svg></div>
@@ -187,7 +187,7 @@ export default function Home() {
               <TiltCard className="card">
                 <div className="icon"><svg><use href="#chat" /></svg></div>
                 <h3>Project chat</h3>
-                <p>Ask business questions directly from a study—no static reports, no search.</p>
+                <p>Ask business questions directly from a study. No static reports, no search.</p>
               </TiltCard>
               <TiltCard className="card">
                 <div className="icon"><svg><use href="#layers" /></svg></div>
@@ -247,7 +247,7 @@ export default function Home() {
                 <h2><TextGenerate text="Not another AI research shortcut." /></h2>
               </div>
               <p>
-                Qualisense is a complete qualitative delivery and intelligence layer—not an isolated interviewing, summarisation or reporting tool.
+                Qualisense is a complete qualitative delivery and intelligence layer. Not an isolated interviewing, summarisation or reporting tool.
               </p>
             </motion.div>
             <motion.div variants={fadeUp} className="compare">
