@@ -24,7 +24,7 @@ export default function Home() {
               <span className="hero-highlight"><TextGenerate text="Research intelligence for every marketer." /></span>
             </motion.h1>
             <motion.p variants={fadeUp} className="lede">
-              Qualisense brings live interviewing, transcription, matrix-led analysis, insight reports and cross-project chat into one workspace—helping research teams scale their craft and marketing teams keep learning from every study.
+              One workspace for live interviewing, transcription, matrix analysis, insight reports and cross-project chat—built for research teams and the marketers they serve.
             </motion.p>
             <motion.div variants={fadeUp} className="hero-actions">
               <ShimmerButton className="btn btn-primary" href="/agencies">Explore for agencies</ShimmerButton>
@@ -116,27 +116,27 @@ export default function Home() {
                 <h2><TextGenerate text="More capacity for researchers. More intelligence for marketers." /></h2>
               </div>
               <p>
-                Agencies amplify delivery capacity without diluting research depth. Brand teams turn completed and future studies into a searchable source of consumer intelligence.
+                Agencies scale delivery without diluting depth. Brand teams turn every study into searchable consumer intelligence.
               </p>
             </motion.div>
             <motion.div variants={fadeUp} className="audience-grid">
               <TiltCard className="audience">
                 <h3>A force multiplier for researchers</h3>
                 <p>
-                  Expand delivery capacity across interviewing, transcription, matrix creation, reporting and client follow-up—while researchers retain control of interpretation.
+                  Scale delivery across interviewing, transcription, matrix creation and reporting—while researchers stay focused on interpretation.
                 </p>
                 <ul>
                   <li>Faster project delivery</li>
                   <li>Better use of senior researcher time</li>
                   <li>Scalable multilingual interviewing</li>
-                  <li>More consistent analysis structures</li>
+                  <li>Consistent analysis structures</li>
                 </ul>
                 <Link className="link-arrow" href="/agencies">See the agency solution &rarr;</Link>
               </TiltCard>
               <TiltCard className="audience">
                 <h3>Research intelligence for every marketer</h3>
                 <p>
-                  Give marketing, insights and innovation teams direct access to searchable, reusable and comparable learning across projects.
+                  Give marketing, insights and innovation teams direct access to comparable learning across every project.
                 </p>
                 <ul>
                   <li>Query completed studies</li>
@@ -167,32 +167,32 @@ export default function Home() {
               <TiltCard className="card">
                 <div className="icon"><svg><use href="#mic" /></svg></div>
                 <h3>Live interviewing agent</h3>
-                <p>Conduct natural, multilingual depth interviews from a discussion guide, with contextual probing where required.</p>
+                <p>Multilingual depth interviews from a discussion guide, with contextual probing.</p>
               </TiltCard>
               <TiltCard className="card">
                 <div className="icon"><svg><use href="#file" /></svg></div>
                 <h3>Transcription and translation</h3>
-                <p>Convert audio or video into clean, structured transcripts ready for research analysis.</p>
+                <p>Audio or video to clean, structured transcripts ready for analysis.</p>
               </TiltCard>
               <TiltCard className="card">
                 <div className="icon"><svg><use href="#grid" /></svg></div>
                 <h3>Analysis matrix</h3>
-                <p>Organise responses by question and respondent before synthesis, so analysis remains structured and traceable.</p>
+                <p>Responses organised by question and respondent before synthesis—structured and traceable.</p>
               </TiltCard>
               <TiltCard className="card">
                 <div className="icon"><svg><use href="#spark" /></svg></div>
                 <h3>Insight reports</h3>
-                <p>Generate question-wise analysis, cross-question themes, contradictions, cohort comparisons and respondent stories.</p>
+                <p>Question-wise analysis, cross-question themes, contradictions, cohort comparisons and respondent stories.</p>
               </TiltCard>
               <TiltCard className="card">
                 <div className="icon"><svg><use href="#chat" /></svg></div>
                 <h3>Project chat</h3>
-                <p>Ask business questions directly from a specific study instead of searching through static reports and transcripts.</p>
+                <p>Ask business questions directly from a study—no static reports, no search.</p>
               </TiltCard>
               <TiltCard className="card">
                 <div className="icon"><svg><use href="#layers" /></svg></div>
                 <h3>Cross-project intelligence</h3>
-                <p>Query selected projects together to identify longitudinal changes, comparisons, repeated tensions and macro trends.</p>
+                <p>Query multiple projects together for longitudinal changes, comparisons and macro trends.</p>
               </TiltCard>
             </motion.div>
           </motion.div>
@@ -214,7 +214,7 @@ export default function Home() {
               <TiltCard className="step">
                 <div className="step-num">1</div>
                 <h3>Upload or create</h3>
-                <p>Start with a discussion guide, audio/video interviews or existing transcripts.</p>
+                <p>Start with a discussion guide, audio/video or existing transcripts.</p>
               </TiltCard>
               <TiltCard className="step">
                 <div className="step-num">2</div>
@@ -224,12 +224,12 @@ export default function Home() {
               <TiltCard className="step">
                 <div className="step-num">3</div>
                 <h3>Structure and analyse</h3>
-                <p>Build the matrix, compare respondents and generate a detailed insight report.</p>
+                <p>Build the matrix, compare respondents and generate an insight report.</p>
               </TiltCard>
               <TiltCard className="step">
                 <div className="step-num">4</div>
                 <h3>Keep asking</h3>
-                <p>Query one study or selected projects together long after the first report is delivered.</p>
+                <p>Query one study or multiple projects long after the report is delivered.</p>
               </TiltCard>
             </motion.div>
           </motion.div>
@@ -247,7 +247,7 @@ export default function Home() {
                 <h2><TextGenerate text="Not another AI research shortcut." /></h2>
               </div>
               <p>
-                Qualisense is designed as a complete qualitative delivery and intelligence layer—not an isolated interviewing, summarisation or reporting tool.
+                Qualisense is a complete qualitative delivery and intelligence layer—not an isolated interviewing, summarisation or reporting tool.
               </p>
             </motion.div>
             <motion.div variants={fadeUp} className="compare">
@@ -292,7 +292,7 @@ export default function Home() {
           id="demo"
           eyebrow="Start with one project"
           title={<TextGenerate text="Turn a completed or live study into a reusable intelligence asset." />}
-          description="Upload a recent project, run a set of business questions and see how Qualisense changes what your team can do with qualitative research."
+          description="Upload a recent project, run your business questions and see what your team can do with qualitative research."
           actions={
             <>
               <ShimmerButton className="btn btn-primary" href="/pricing#demo">Request a pilot</ShimmerButton>

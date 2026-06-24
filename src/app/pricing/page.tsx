@@ -10,7 +10,7 @@ export default function Pricing() {
         <div className="container">
           <div className="eyebrow">Pricing</div>
           <h1>Flexible plans for agencies and brand teams.</h1>
-          <p className="lede">Choose a project-based module, a full workflow or a multi-project enterprise workspace.</p>
+          <p className="lede">Project-based modules, full workflow, or a multi-project enterprise workspace.</p>
         </div>
       </header>
 
@@ -54,7 +54,7 @@ export default function Pricing() {
           <div>
             <div className="eyebrow">Book a demo or pilot</div>
             <h2>Bring one real research use case.</h2>
-            <p className="lede">Tell us whether you are an agency or an end client, what material you have and what you want to evaluate.</p>
+            <p className="lede">Tell us if you're an agency or end client, what material you have and what you want to evaluate.</p>
             <div className="list-check">
               <div>Completed transcripts</div>
               <div>Audio/video interviews</div>
