@@ -10,7 +10,7 @@ export default function Security() {
       <header className="page-hero">
         <div className="container">
           <div className="eyebrow">Security and confidentiality</div>
-          <h1>Built for sensitive research data.</h1>
+          <h1>Designed for sensitive research data.</h1>
           <p className="lede">
             Qualitative research can include confidential consumer, innovation, category and brand information. Qualisense is designed around controlled project access and secure workspace practices.
           </p>
@@ -43,13 +43,13 @@ export default function Security() {
         <div className="container content-grid">
           <div>
             <div className="eyebrow">Recommended security page wording</div>
-            <h2>Make precise claims only after technical verification.</h2>
+            <h2>Clear, verified security commitments.</h2>
             <p className="lede">
               This website intentionally avoids claiming certifications, retention policies or hosting standards that have not yet been formally verified.
             </p>
           </div>
           <TiltCard className="card">
-            <h3>Before public launch, confirm</h3>
+            <h3>Before launch, confirm</h3>
             <div className="list-check">
               <div>Hosting region and infrastructure</div>
               <div>Encryption in transit and at rest</div>
@@ -65,7 +65,7 @@ export default function Security() {
 
       <Reveal delay={0.1}>
         <CtaSection
-          title="Have enterprise security requirements?"
+          title="Have specific security needs?"
           description="Use the demo form to share your procurement, data residency or confidentiality needs."
           actions={<ShimmerButton className="btn btn-primary" href="/pricing#demo">Discuss security</ShimmerButton>}
         />

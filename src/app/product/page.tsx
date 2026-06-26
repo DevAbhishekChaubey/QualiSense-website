@@ -30,8 +30,8 @@ export default function Product() {
       <header className="page-hero">
         <div className="container">
           <div className="eyebrow">The Qualisense platform</div>
-          <h1>Everything needed to conduct, analyse and reuse qualitative research.</h1>
-          <p className="lede">Use the full workflow or only the modules your team needs.</p>
+          <h1>Conduct, analyse and reuse qualitative research.</h1>
+          <p className="lede">Use the full workflow or one module.</p>
         </div>
       </header>
 
@@ -60,19 +60,19 @@ export default function Product() {
                   <>
                     <div>
                       <div className="eyebrow">Live interviewing agent</div>
-                      <h2>Depth interviews that follow the respondent. Not just the script.</h2>
-                      <p className="lede">Follows the discussion guide, listens and probes where deeper exploration is needed.</p>
+                      <h2>Live interviews that probe naturally.</h2>
+                      <p className="lede">The agent follows the guide and probes for depth.</p>
                       <div className="list-check">
                         <div>Multiple languages</div>
                         <div>Contextual probing</div>
                         <div>Consistent interview flow</div>
                         <div>Transcript output</div>
-                        <div>Natural, respondent-led flow</div>
+                        <div>Natural, respondent-led conversational flow</div>
                       </div>
                     </div>
                     <TiltCard className="card">
                       <h3>Best for</h3>
-                      <p>Exploratory interviews, concept reactions, follow-up, consumer feedback, dealer and stakeholder conversations.</p>
+                      <p>Exploration, concepts, feedback and stakeholder interviews.</p>
                     </TiltCard>
                   </>
                 )}
@@ -80,8 +80,8 @@ export default function Product() {
                   <>
                     <div>
                       <div className="eyebrow">Transcription</div>
-                      <h2>Clean research-ready transcripts.</h2>
-                      <p className="lede">Upload audio or video and get structured, analysis-ready transcripts.</p>
+                      <h2>Analysis-ready transcripts.</h2>
+                      <p className="lede">Turn audio or video into structured transcripts.</p>
                     </div>
                     <TiltCard className="card">
                       <div className="list-check">
@@ -97,8 +97,8 @@ export default function Product() {
                   <>
                     <div>
                       <div className="eyebrow">Matrix and report</div>
-                      <h2>Structured analysis before synthesis.</h2>
-                      <p className="lede">Questions as rows, respondents as columns. Qualisense uses this structure for deeper, traceable analysis.</p>
+                      <h2>Structure before synthesis.</h2>
+                      <p className="lede">Questions form rows. Respondents form columns. Analysis stays structured and traceable.</p>
                     </div>
                     <TiltCard className="card">
                       <div className="list-check">
@@ -116,12 +116,12 @@ export default function Product() {
                   <>
                     <div>
                       <div className="eyebrow">Project chat</div>
-                      <h2>Ask specific questions from one study.</h2>
-                      <p className="lede">Explore barriers, motivations, segment differences, language and emotions from one project.</p>
+                      <h2>Query one study.</h2>
+                      <p className="lede">Explore barriers, motivations, segments and evidence.</p>
                     </div>
                     <TiltCard className="card">
                       <h3>Example</h3>
-                      <p>&ldquo;Which respondents found the proposition confusing, and what specifically caused the confusion?&rdquo;</p>
+                      <p>&ldquo;Who found the proposition confusing, and why?&rdquo;</p>
                     </TiltCard>
                   </>
                 )}
@@ -129,12 +129,12 @@ export default function Product() {
                   <>
                     <div>
                       <div className="eyebrow">Cross-project chat</div>
-                      <h2>Query selected studies together.</h2>
-                      <p className="lede">Compare studies across years, markets, categories or target groups to identify macro themes and shifts over time.</p>
+                      <h2>Query multiple studies.</h2>
+                      <p className="lede">Compare markets, years and audiences to find shifts.</p>
                     </div>
                     <TiltCard className="card">
                       <h3>Example</h3>
-                      <p>&ldquo;How has the role of trust changed across the 2024, 2025 and 2026 category studies?&rdquo;</p>
+                      <p>&ldquo;How has trust changed across recent studies?&rdquo;</p>
                     </TiltCard>
                   </>
                 )}
@@ -150,7 +150,7 @@ export default function Product() {
           <div className="section-head">
             <div>
               <div className="eyebrow">Product modules</div>
-              <h2>Four clear ways to buy.</h2>
+              <h2>Four product options.</h2>
             </div>
           </div>
           <div className="cards product-modules">
@@ -164,7 +164,7 @@ export default function Product() {
             </TiltCard>
             <TiltCard className="card">
               <h3>Transcription + matrix + report</h3>
-              <p>End-to-end from recordings to structured insight.</p>
+              <p>Recordings to matrix, report and chat.</p>
             </TiltCard>
             <TiltCard className="card">
               <h3>Matrix + report from transcripts</h3>
@@ -177,7 +177,7 @@ export default function Product() {
 
       <Reveal delay={0.1}>
         <CtaSection
-          title="Evaluate Qualisense on your own research material."
+          title="Test it on your own research."
           description="A real project is the most direct way to assess quality across interviewing, structure and analysis."
           actions={<ShimmerButton className="btn btn-primary" href="/pricing#demo">Request a pilot</ShimmerButton>}
         />

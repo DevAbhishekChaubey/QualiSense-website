@@ -24,7 +24,7 @@ export default function Home() {
               <span className="hero-highlight"><TextGenerate text="Research intelligence for every marketer." /></span>
             </motion.h1>
             <motion.p variants={fadeUp} className="lede">
-              Live interviewing, transcription, matrix analysis, insight reports and cross-project chat. One workspace for research teams and the marketers they serve.
+              Conduct interviews, structure conversations and query learning across studies, all in one workspace.
             </motion.p>
             <motion.div variants={fadeUp} className="hero-actions">
               <ShimmerButton className="btn btn-primary" href="/agencies">Explore for agencies</ShimmerButton>
@@ -100,10 +100,10 @@ export default function Home() {
       <Reveal>
       <section>
         <div className="container stat-row">
-          <StatCard label="Natural depth" desc="adaptive probing that follows the respondent" delay={0} />
-          <StatCard label="1 → many" desc="query one project or multiple studies" delay={0.05} />
-          <StatCard value={4} desc="modular ways to use the platform" delay={0.1} />
-          <StatCard label="Always on" desc="research intelligence beyond the final report" delay={0.15} />
+          <StatCard label="Natural depth" desc="natural, adaptive probing" delay={0} />
+          <StatCard label="1 → many" desc="single and cross-project chat" delay={0.05} />
+          <StatCard value={4} desc="flexible product modules" delay={0.1} />
+          <StatCard label="Always on" desc="insights beyond the final report" delay={0.15} />
         </div>
       </section>
 
@@ -116,33 +116,33 @@ export default function Home() {
                 <h2><TextGenerate text="More capacity for researchers. More intelligence for marketers." /></h2>
               </div>
               <p>
-                Agencies scale delivery without diluting depth. Brand teams turn every study into searchable consumer intelligence.
+                Agencies deliver faster. Brand teams keep every study searchable.
               </p>
             </motion.div>
             <motion.div variants={fadeUp} className="audience-grid">
               <TiltCard className="audience">
                 <h3>A force multiplier for researchers</h3>
                 <p>
-                  Scale delivery across interviewing, transcription, matrix creation and reporting. Researchers stay focused on interpretation.
+                  Reduce delivery effort while researchers retain control of interpretation.
                 </p>
                 <ul>
-                  <li>Faster project delivery</li>
-                  <li>Better use of senior researcher time</li>
-                  <li>Scalable multilingual interviewing</li>
-                  <li>Consistent analysis structures</li>
+                  <li>Faster delivery</li>
+                  <li>More time for senior thinking</li>
+                  <li>Multilingual interviewing</li>
+                  <li>Consistent analysis</li>
                 </ul>
                 <Link className="link-arrow" href="/agencies">See the agency solution &rarr;</Link>
               </TiltCard>
               <TiltCard className="audience">
                 <h3>Research intelligence for every marketer</h3>
                 <p>
-                  Give marketing, insights and innovation teams direct access to comparable learning across every project.
+                  Give teams direct access to searchable, reusable learning.
                 </p>
                 <ul>
                   <li>Query completed studies</li>
-                  <li>Compare multiple studies</li>
-                  <li>Identify macro trends and shifts</li>
-                  <li>Run faster internal qual projects</li>
+                  <li>Compare studies over time</li>
+                  <li>Spot trends and shifts</li>
+                  <li>Run faster qual projects</li>
                 </ul>
                 <Link className="link-arrow" href="/brands">See the brand solution &rarr;</Link>
               </TiltCard>
@@ -159,7 +159,7 @@ export default function Home() {
             <motion.div variants={fadeUp} className="section-head">
               <div>
                 <div className="eyebrow">The complete intelligence loop</div>
-                <h2><TextGenerate text="From discussion guide to decisions. Back to the evidence." /></h2>
+                <h2><TextGenerate text="From discussion guide to insight." /></h2>
               </div>
               <p>Use the full workflow or only the modules you need.</p>
             </motion.div>
@@ -167,32 +167,32 @@ export default function Home() {
               <TiltCard className="card">
                 <div className="icon"><svg><use href="#mic" /></svg></div>
                 <h3>Live interviewing agent</h3>
-                <p>Multilingual depth interviews from a discussion guide, with contextual probing.</p>
+                <p>Run multilingual depth interviews with contextual probing.</p>
               </TiltCard>
               <TiltCard className="card">
                 <div className="icon"><svg><use href="#file" /></svg></div>
                 <h3>Transcription and translation</h3>
-                <p>Audio or video to clean, structured transcripts ready for analysis.</p>
+                <p>Turn audio or video into analysis-ready transcripts.</p>
               </TiltCard>
               <TiltCard className="card">
                 <div className="icon"><svg><use href="#grid" /></svg></div>
                 <h3>Analysis matrix</h3>
-                <p>Responses organised by question and respondent before synthesis. Structured and traceable.</p>
+                <p>Structure responses by question and respondent.</p>
               </TiltCard>
               <TiltCard className="card">
                 <div className="icon"><svg><use href="#spark" /></svg></div>
                 <h3>Insight reports</h3>
-                <p>Question-wise analysis, cross-question themes, contradictions, cohort comparisons and respondent stories.</p>
+                <p>Generate themes, comparisons, contradictions and respondent stories.</p>
               </TiltCard>
               <TiltCard className="card">
                 <div className="icon"><svg><use href="#chat" /></svg></div>
                 <h3>Project chat</h3>
-                <p>Ask business questions directly from a study. No static reports, no search.</p>
+                <p>Ask questions directly from a study.</p>
               </TiltCard>
               <TiltCard className="card">
                 <div className="icon"><svg><use href="#layers" /></svg></div>
                 <h3>Cross-project intelligence</h3>
-                <p>Query multiple projects together for longitudinal changes, comparisons and macro trends.</p>
+                <p>Compare selected studies to find shifts and recurring themes.</p>
               </TiltCard>
             </motion.div>
           </motion.div>
@@ -207,29 +207,29 @@ export default function Home() {
             <motion.div variants={fadeUp} className="section-head">
               <div>
                 <div className="eyebrow">How it works</div>
-                <h2><TextGenerate text="One platform. Multiple ways to work." /></h2>
+                <h2><TextGenerate text="One platform. Four simple steps." /></h2>
               </div>
             </motion.div>
             <motion.div variants={fadeUp} className="workflow">
               <TiltCard className="step">
                 <div className="step-num">1</div>
                 <h3>Upload or create</h3>
-                <p>Start with a discussion guide, audio/video or existing transcripts.</p>
+                <p>Start with a guide, recordings or transcripts.</p>
               </TiltCard>
               <TiltCard className="step">
                 <div className="step-num">2</div>
                 <h3>Conduct or transcribe</h3>
-                <p>Run live interviews or convert recordings into clean transcripts.</p>
+                <p>Run interviews or transcribe recordings.</p>
               </TiltCard>
               <TiltCard className="step">
                 <div className="step-num">3</div>
                 <h3>Structure and analyse</h3>
-                <p>Build the matrix, compare respondents and generate an insight report.</p>
+                <p>Build the matrix and generate insights.</p>
               </TiltCard>
               <TiltCard className="step">
                 <div className="step-num">4</div>
                 <h3>Keep asking</h3>
-                <p>Query one study or multiple projects long after the report is delivered.</p>
+                <p>Query one or many studies at any time.</p>
               </TiltCard>
             </motion.div>
           </motion.div>
@@ -244,10 +244,10 @@ export default function Home() {
             <motion.div variants={fadeUp} className="section-head">
               <div>
                 <div className="eyebrow">Why Qualisense</div>
-                <h2><TextGenerate text="Not another AI research shortcut." /></h2>
+                <h2><TextGenerate text="More than an AI shortcut." /></h2>
               </div>
               <p>
-                Qualisense is a complete qualitative delivery and intelligence layer. Not an isolated interviewing, summarisation or reporting tool.
+                Qualisense connects the full qualitative workflow and keeps every study usable.
               </p>
             </motion.div>
             <motion.div variants={fadeUp} className="compare">
@@ -283,7 +283,7 @@ export default function Home() {
 
       <Reveal delay={0.1}>
         <QuoteSection className="section alt">
-          <p>&ldquo;A force multiplier for researchers. A living consumer intelligence layer for marketers.&rdquo;</p>
+          <p>&ldquo;More capacity for researchers. More intelligence for marketers.&rdquo;</p>
         </QuoteSection>
       </Reveal>
 
@@ -291,8 +291,8 @@ export default function Home() {
         <CtaSection
           id="demo"
           eyebrow="Start with one project"
-          title={<TextGenerate text="Turn a completed or live study into a reusable intelligence asset." />}
-          description="Upload a recent project, run your business questions and see what your team can do with qualitative research."
+          title={<TextGenerate text="Get more from every study." />}
+          description="Start with one project and test it on real business questions."
           actions={
             <>
               <ShimmerButton className="btn btn-primary" href="/pricing#demo">Request a pilot</ShimmerButton>

@@ -12,7 +12,7 @@ export default function Agencies() {
           <div className="eyebrow">Qualisense for agencies</div>
           <h1>A force multiplier for researchers.</h1>
           <p className="lede">
-            Scale capacity across interviewing, transcription, matrix creation and reporting. Researchers stay focused on interpretation and strategic thinking.
+            Move faster from fieldwork to structured analysis while researchers focus on interpretation and recommendations.
           </p>
           <div className="hero-actions">
             <ShimmerButton className="btn btn-primary" href="/pricing#demo">Start an agency pilot</ShimmerButton>
@@ -23,12 +23,12 @@ export default function Agencies() {
 
       <Reveal>
       <section className="section alt">
-        <div className="container content-grid">
+        <div className="container content-grid" style={{ alignItems: 'center' }}>
           <div>
             <div className="eyebrow">The agency challenge</div>
-            <h2>Qualitative delivery runs on manual effort.</h2>
+            <h2>Manual work slows qualitative delivery.</h2>
             <p className="lede">
-              Hours lost to transcript checking, translation coordination, analysis grids and first-cut reports. Before a single insight is written.
+              Transcripts, grids and first-cut synthesis consume researcher time and margins.
             </p>
           </div>
           <TiltCard className="card sticky-card">
@@ -52,7 +52,7 @@ export default function Agencies() {
           <div className="section-head">
             <div>
               <div className="eyebrow">Flexible delivery models</div>
-              <h2>Use only the support your project needs.</h2>
+              <h2>Choose only what you need.</h2>
             </div>
           </div>
           <div className="cards">
@@ -62,23 +62,23 @@ export default function Agencies() {
             </TiltCard>
             <TiltCard className="card">
               <h3>Live interviewing agent</h3>
-              <p>Multilingual depth interviews with contextual probing and transcript output.</p>
+              <p>Multilingual interviews with natural probing.</p>
             </TiltCard>
             <TiltCard className="card">
               <h3>Transcription + matrix + report</h3>
-              <p>From raw recordings to structured analysis and insight report.</p>
+              <p>From recordings to matrix and report.</p>
             </TiltCard>
             <TiltCard className="card">
               <h3>Matrix + report from transcripts</h3>
-              <p>Upload transcripts and accelerate structured analysis.</p>
+              <p>Turn transcripts into matrix and report.</p>
             </TiltCard>
             <TiltCard className="card">
               <h3>Project chat</h3>
-              <p>Answer internal and client queries from the study workspace.</p>
+              <p>Query the study workspace.</p>
             </TiltCard>
             <TiltCard className="card">
               <h3>Cross-project chat</h3>
-              <p>Query selected studies together to surface recurring patterns.</p>
+              <p>Compare studies and recurring themes.</p>
             </TiltCard>
           </div>
         </div>
@@ -87,12 +87,12 @@ export default function Agencies() {
 
       <Reveal delay={0.1}>
       <section className="section alt" id="interviewing">
-        <div className="container content-grid">
+        <div className="container content-grid" style={{ alignItems: 'center' }}>
           <div>
             <div className="eyebrow">Live interviewing</div>
-            <h2>A scalable way to conduct depth interviews.</h2>
+            <h2>Optional live interviewing, built in.</h2>
             <p className="lede">
-              Follows the discussion guide, listens to respondent answers and probes naturally where more depth is needed.
+              The agent follows the guide and probes where more depth is needed.
             </p>
             <div className="list-check">
               <div>Supports multiple languages</div>
@@ -103,9 +103,9 @@ export default function Agencies() {
           </div>
           <TiltCard className="card">
             <span className="badge">Adaptive, contextual probing</span>
-            <h3 style={{ marginTop: 18 }}>Interviews that follow the respondent. Not just the script.</h3>
+            <h3 style={{ marginTop: 18 }}>Natural interviews. Consistent coverage.</h3>
             <p>
-              Sustains natural conversational flow and probes for depth where a skilled researcher would expect it.
+              Adaptive probing keeps conversations natural and on brief.
             </p>
           </TiltCard>
         </div>
@@ -118,21 +118,21 @@ export default function Agencies() {
           <div className="section-head">
             <div>
               <div className="eyebrow">Business impact</div>
-              <h2>Multiply research capacity without multiplying manual load.</h2>
+              <h2>More capacity. Less manual effort.</h2>
             </div>
           </div>
           <div className="cards">
             <TiltCard className="card">
               <h3>Faster timelines</h3>
-              <p>Less time between fieldwork, analysis and first client outputs.</p>
+              <p>Shorten the path from fieldwork to first output.</p>
             </TiltCard>
             <TiltCard className="card">
               <h3>Better project margins</h3>
-              <p>Reduce repetitive delivery effort while preserving senior thinking.</p>
+              <p>Reduce repetitive effort and protect margins.</p>
             </TiltCard>
             <TiltCard className="card">
               <h3>Consistent quality</h3>
-              <p>Repeatable analysis structure across projects and researchers.</p>
+              <p>Apply a consistent structure across projects.</p>
             </TiltCard>
           </div>
         </div>
@@ -145,7 +145,7 @@ export default function Agencies() {
           <div className="section-head">
             <div>
               <div className="eyebrow">How we are different</div>
-              <h2>A delivery engine, not an isolated AI tool.</h2>
+              <h2>One connected delivery engine.</h2>
             </div>
           </div>
           <div className="compare">
@@ -171,8 +171,8 @@ export default function Agencies() {
       <Reveal delay={0.1}>
         <CtaSection
           eyebrow="Agency pilot"
-          title="Test Qualisense on one completed or live project."
-          description="Upload 5–10 interviews, generate the matrix and report, then use project chat to compare against your current workflow."
+          title="Test it on one project."
+          description="Upload interviews, generate outputs and compare them with your current workflow."
           actions={<ShimmerButton className="btn btn-primary" href="/pricing#demo">Start a pilot</ShimmerButton>}
         />
       </Reveal>

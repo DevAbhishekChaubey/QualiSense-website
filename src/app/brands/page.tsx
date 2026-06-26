@@ -14,7 +14,7 @@ export default function Brands() {
           <div className="eyebrow">Qualisense for brand teams</div>
           <h1>Research intelligence for every marketer.</h1>
           <p className="lede">
-            Turn completed and future studies into searchable, reusable intelligence. Accessible to marketing, innovation, insights and strategy teams on demand.
+            Turn completed and future qualitative studies into searchable, reusable intelligence that marketing, innovation, insights and strategy teams can access whenever a new question arises.
           </p>
           <div className="hero-actions">
             <ShimmerButton className="btn btn-primary" href="/pricing#demo">Pilot with a completed study</ShimmerButton>
@@ -28,9 +28,9 @@ export default function Brands() {
         <div className="container content-grid">
           <div>
             <div className="eyebrow">The client problem</div>
-            <h2>Most research value stays locked in old decks and transcripts.</h2>
+            <h2>Most research value remains locked in old decks and transcripts.</h2>
             <p className="lede">
-              New questions keep emerging after the report is delivered. Qualisense lets teams ask them directly from the research material.
+              New questions keep emerging after the agency report is delivered. Qualisense lets teams ask those questions directly from the research material.
             </p>
           </div>
           <TiltCard className="card">
@@ -63,7 +63,7 @@ export default function Brands() {
             </TiltCard>
             <TiltCard className="card">
               <h3>2. Build a cross-project hub</h3>
-              <p>Bring related studies together to compare markets, segments, time periods and emerging themes.</p>
+              <p>Bring multiple related studies together to compare markets, segments, time periods and emerging themes.</p>
             </TiltCard>
             <TiltCard className="card">
               <h3>3. Run new qual projects</h3>
@@ -81,7 +81,7 @@ export default function Brands() {
             <div className="eyebrow">Project chat</div>
             <h2>Ask the study what you need to know.</h2>
             <p className="lede">
-              Teams can query the project directly and explore the underlying consumer evidence. No deck-searching, no waiting for additional analysis.
+              Instead of searching through decks or requesting additional analysis, teams can query the project directly and explore the underlying consumer evidence.
             </p>
           </div>
           <TiltCard className="card">
@@ -148,7 +148,7 @@ export default function Brands() {
             </TiltCard>
             <TiltCard className="card">
               <h3>Internal research</h3>
-              <p>Smaller, faster projects without a full agency cycle.</p>
+              <p>Run smaller, faster projects without waiting for a full agency cycle.</p>
             </TiltCard>
           </div>
         </div>
@@ -165,7 +165,7 @@ export default function Brands() {
         <CtaSection
           eyebrow="Recommended first pilot"
           title="Start with one recently completed study."
-          description="Upload transcripts, generate the matrix and report, ask 20–30 business questions, then add older related studies for cross-project analysis."
+          description="Upload the transcripts, generate the matrix and report, ask 20–30 business questions, then add older related studies for cross-project analysis."
           actions={<ShimmerButton className="btn btn-primary" href="/pricing#demo">Create a pilot workspace</ShimmerButton>}
         />
       </Reveal>
