@@ -106,7 +106,9 @@ export default function Nav() {
                 {link.label}
                 {isActive ? (
                   <motion.div
-                    layoutId="nav-active"
+                    initial={{ opacity: 0, scaleX: 0.8 }}
+                    animate={{ opacity: 1, scaleX: 1 }}
+                    transition={{ duration: 0.15, ease: 'easeOut' }}
                     style={{
                       position: 'absolute',
                       bottom: -4,
@@ -115,8 +117,8 @@ export default function Nav() {
                       height: 2,
                       borderRadius: 1,
                       background: 'var(--primary)',
+                      transformOrigin: 'center',
                     }}
-                    transition={{ type: 'spring', stiffness: 300, damping: 25 }}
                   />
                 ) : null}
               </Link>
